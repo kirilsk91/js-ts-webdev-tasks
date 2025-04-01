@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* global color variables */
+:root {
+  --primary-color: #1e0e62;
+  --bg-color-white: #ffffff;
+  --bg-color-grey: #ebeaed;
+  --bg-color-blue: #482be7;
+  --border-color-grey: #ebeaed;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  margin: 150px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+header h3 {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 52px;
+  letter-spacing: -0.4px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+header button {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--primary-color);
+  border: 2px solid var(--border-color-grey);
+  background-color: var(--bg-color-white);
+  width: 214px;
+  height: 50px;
+  border-radius: 100px;
+  border-width: 2px;
+}
+
+header button:hover {
+  background-color: var(--bg-color-grey);
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px;
+  /* use width 100% to position cards evenly */
+  /* width: 570px; */
+  width: 100%;
+  height: 340px;
+  border-radius: 10px;
+  background-color: var(--bg-color-grey);
+  /* keep original size intact when adding padding */
+  box-sizing: border-box;
+}
+
+.card h5 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.card p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: var(--primary-color);
+}
+
+.card button {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  width: 105px;
+  height: 40px;
+  border-radius: 100px;
+  border: none;
+  color: var(--primary-color);
+}
