@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  margin: 150px;
+  margin: 75px 350px;
 }
 
 header {
@@ -74,6 +74,9 @@ header button:hover {
   background-color: var(--bg-color-grey);
   /* keep original size intact when adding padding */
   box-sizing: border-box;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .card h5 {
