@@ -14,7 +14,13 @@ body {
 }
 
 .container {
-  margin: 75px 350px;
+  margin: 150px;
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin: 0;
+  }
 }
 
 header {
@@ -22,6 +28,19 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+}
+
+@media (max-width: 750px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  header h3,
+  header button {
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
 }
 
 header h3 {
@@ -56,7 +75,7 @@ header button:hover {
 
 #card-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   justify-content: center;
 }
@@ -66,9 +85,6 @@ header button:hover {
   flex-direction: column;
   justify-content: space-between;
   padding: 60px;
-  /* use width 100% to position cards evenly */
-  /* width: 570px; */
-  width: 100%;
   height: 340px;
   border-radius: 10px;
   background-color: var(--bg-color-grey);
