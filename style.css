@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.light-theme {
+  --primary-color: #15143966;
+  --secondary-color: #1e0e62;
+  --accent-color: #482be7;
+  --border-color: #ebeaed;
+  --bg-color: #ffffff;
+  --text-color: #1e0e62;
+}
+
+.dark-theme {
+  --primary-color: #ffffff;
+  --secondary-color: #d38f22;
+  --accent-color: #d2b78c;
+  --border-color: #444;
+  --bg-color: #121212;
+  --text-color: #d38f22;
+}
+
+/* TOGGLE THEME */
+.theme-switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.slider-box {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+.slider-box:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* input/toggle status check */
+input:checked + .slider-box {
+  background-color: #d38f22;
+}
+
+input:checked + .slider-box:before {
+  transform: translateX(24px);
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.col-3 {
+  width: 25%;
+}
+.col-9 {
+  width: 75%;
+}
+
+.container {
+  margin: 100px 150px 50px 150px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin: 80px 120px 40px 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    margin: 60px 100px 30px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 50px 80px 25px 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin: 40px 60px 20px 60px;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    margin: 30px 40px 15px 40px;
+  }
+}
+
+.item-counter {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+/* DROPWDOWN */
+.item-filter {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  position: relative;
+  cursor: pointer;
+}
+
+.item-filter #selected-filter {
+  color: var(--secondary-color);
+}
+
+.item-filter i {
+  color: var(--secondary-color);
+  transition: transform 0.2s ease-in-out;
+}
+
+.item-filter:hover i {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0;
+  margin-top: 5px;
+  /* hide menu initially */
+  display: none;
+  z-index: 10;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left;
+}
+
+/* ITEM CATEGORIES */
+.item-categories .active {
+  color: var(--secondary-color);
+}
+
+.item-categories ul {
+  margin: 0px;
+  padding: 0;
+}
+
+.item-categories ul li:hover {
+  cursor: pointer;
+}
+
+.item-categories ul li {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: var(--primary-color);
+  list-style: none;
+}
+
+/* Card */
+.card {
+  /* width: 270px; */
+  /* use 100% so that card can scale to the width 
+  of the container/element in grid */
+  width: 100%;
+}
+
+.card h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
+
+.card p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.card button {
+  width: 120px;
+  height: 40px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+.card button:hover {
+  background-color: var(--border-color);
+}
+
+.card img {
+  /* dont use fixed dimensions, 
+  so that image can scale when resizing */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-info-wrapper {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 110px;
+  justify-content: space-between;
+}
+
+/* Grid */
+#item-list {
+  display: none;
+  /* 250px is the minimal width size before breakpoint
+  1fr is used to expand the items and use available free space */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 28px;
+  row-gap: 70px;
+}
+
+#no-items-container {
+  display: none;
+}
+
+.no-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.no-items i {
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.no-items h1 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
