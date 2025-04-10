@@ -73,6 +73,7 @@ function generateCard({
 
   if (bgUrl) {
     card.style.background = `url(assets/${bgUrl})`;
+    card.style.textShadow = "0 1px 3px rgba(0, 0, 0, 0.7";
   }
 
   cardTitle.innerHTML = title;
