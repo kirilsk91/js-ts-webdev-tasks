@@ -1,25 +1,23 @@
-const a = ['smartphones', 'laptops', 'tops'];
+import { CategoryListItem } from './CategoryListItem';
 
-export const CategoryList = (): HTMLElement => {
-  const sectionTitle = document.createElement('h1');
-  sectionTitle.innerText = 'Category';
+export const CategoryList = (items: string[]): DocumentFragment => {
+  const fragment = document.createDocumentFragment();
+  const sectionTitle = document.createElement('div');
+  sectionTitle.className = 'category-title';
+  sectionTitle.innerHTML =
+    /*html*/
+    `
+  <h1>Categories</h1>
+  `;
 
   const catList = document.createElement('section');
   catList.className = 'cat-list';
+  catList.id = 'categories';
 
-  const fragment = document.createDocumentFragment();
-
-  a.forEach((item) => {
-    const catListItem = document.createElement('div');
-    catListItem.className = 'cat-list-item';
-
-    const title = document.createElement('h1');
-    title.textContent = item;
-
-    catListItem.appendChild(title);
-    fragment.appendChild(catListItem);
+  items.forEach((item) => {
+    catList.appendChild(CategoryListItem(item));
   });
 
-  catList.append(sectionTitle, fragment);
-  return catList;
+  fragment.append(sectionTitle, catList);
+  return fragment;
 };

@@ -18,7 +18,8 @@ export const CtaTextOverlay = (): HTMLElement => {
   `;
 
   ctaText.append(
-    Button('Shop Now'),
+    //pass scroll action, to go to anchor
+    Button('Shop Now', 'default-button', true),
     CtaStats([
       { num: 200, text: 'Happy Customers' },
       { num: 2000, text: 'High-Quality Products' },
