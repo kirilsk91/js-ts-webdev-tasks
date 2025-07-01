@@ -10,6 +10,8 @@ import { Menu } from '@shared/Menu';
 import { Footer } from '@shared/Footer';
 import Navigo from 'navigo';
 import { NotFound } from '@shared/NotFound';
+import { initCategoryPage } from './pages/Category';
+import type { CategoryRoute } from '@myTypes/types';
 
 const router = new Navigo('/', { hash: true });
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -17,24 +19,21 @@ app.innerHTML = '';
 
 app.append(Promo(), Menu());
 
-// Container for dynamic page content
 const contentContainer = document.createElement('div');
 contentContainer.id = 'page-content';
 app.appendChild(contentContainer);
 
 app.appendChild(Footer());
 
-// Routing with Navigo
 router
   .on({
     '/': () => {
-      contentContainer.innerHTML = ''; // Clear previous content
+      contentContainer.innerHTML = '';
       initHomePage(contentContainer);
     },
-    '/cart': () => {
+    '/category/:slug': ({ data }: CategoryRoute) => {
       contentContainer.innerHTML = '';
-      // initCartPage(contentContainer);
-      contentContainer.innerText = 'Cart Page - under construction';
+      initCategoryPage(contentContainer, data?.slug);
     },
   })
   .notFound(() => {

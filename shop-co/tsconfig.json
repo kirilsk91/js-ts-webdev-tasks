@@ -3,7 +3,11 @@
     "baseUrl": ".",
     "paths": {
       "@shared/*": ["src/shared/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@myTypes/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
+      "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

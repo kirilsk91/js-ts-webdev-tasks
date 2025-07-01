@@ -1,0 +1,27 @@
+.breadcrumb-row {
+  padding: 0 100px;
+  align-items: center;
+  display: flex;
+}
+
+.breadcrumb-row span {
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000099;
+}
+
+.breadcrumb-row span::first-letter {
+  text-transform: uppercase;
+}
+
+.breadcrumb-row span.bc-category {
+  color: #000000;
+}
+
+.breadcrumb-row img {
+  margin: 0 15px;
+}

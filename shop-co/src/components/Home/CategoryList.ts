@@ -1,4 +1,4 @@
-import type { Category } from '../../types';
+import type { Category } from '@myTypes/types';
 import { CategoryListItem } from './CategoryListItem';
 
 export const CategoryList = (items: Category[]): DocumentFragment => {
@@ -15,8 +15,19 @@ export const CategoryList = (items: Category[]): DocumentFragment => {
   catList.className = 'cat-list';
   catList.id = 'categories';
 
-  items.forEach(({ name }) => {
-    catList.appendChild(CategoryListItem(name));
+  items.forEach(({ name, slug }) => {
+    catList.appendChild(CategoryListItem(name, slug));
+  });
+
+  catList.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    //in case user clicks on label (heading)
+    const catItem = target.closest('.cat-list-item') as HTMLElement | null;
+
+    if (catItem && catItem.dataset.slug) {
+      const slug = catItem.dataset.slug;
+      window.location.hash = `/category/${slug}`;
+    }
   });
 
   fragment.append(sectionTitle, catList);

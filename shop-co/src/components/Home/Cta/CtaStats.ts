@@ -1,4 +1,4 @@
-import type { CtaStatPair } from '../../../types';
+import type { CtaStatPair } from '@myTypes/types';
 
 export const CtaStats = (ctaStats: CtaStatPair[]): HTMLElement => {
   const statWrapper = document.createElement('div');

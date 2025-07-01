@@ -1,18 +1,25 @@
 import '@styles/homePage.css';
-import type { Category } from '../types';
-import { CallToAction } from '../components/Home/Cta/CallToAction';
-import { BrandShowcase } from '../components/Home/BrandShowcase';
-import { CategoryList } from '../components/Home/CategoryList';
-import { getCategories } from '../services/Categories';
+import type { Category } from '@myTypes/types';
+import { CallToAction } from '@components/Home/Cta/CallToAction';
+import { BrandShowcase } from '@components/Home/BrandShowcase';
+import { CategoryList } from '@components/Home/CategoryList';
+import { getCategories } from '@services/Categories';
 
-export const initHomePage = async (container: HTMLElement): Promise<void> => {
+export const initHomePage = async (
+  dyamicContainer: HTMLElement
+): Promise<void> => {
   try {
     const categories: Category[] = await getCategories();
-    container.innerHTML = '';
+    dyamicContainer.innerHTML = '';
 
-    container.append(CallToAction(), BrandShowcase(), CategoryList(categories));
+    dyamicContainer.append(
+      CallToAction(),
+      BrandShowcase(),
+      CategoryList(categories)
+    );
   } catch (error) {
-    console.error('Failed to fetch categories', error);
-    container.innerHTML = '<p>Failed to load content.</p>';
+    console.error('Some error', error);
+    //add placeholder
+    dyamicContainer.innerHTML = '<p>Failed to load content.</p>';
   }
 };
