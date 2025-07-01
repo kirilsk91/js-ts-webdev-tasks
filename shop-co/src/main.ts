@@ -7,27 +7,23 @@ import { BrandShowcase } from './components/HomePage/BrandShowcase';
 import { CallToAction } from './components/HomePage/Cta/CallToAction';
 import { CategoryList } from './components/HomePage/CategoryList';
 import { Footer } from './components/HomePage/Footer';
+import { getCategories } from './services/Categories';
+import type { Categories } from './types';
 
-const a = [
-  'smartphones',
-  'laptops',
-  'tops',
-  'smartphones',
-  'laptops',
-  'tops',
-  'smartphones',
-  'laptops',
-  'tops',
-  'smartphones',
-  'laptops',
-  'tops',
-];
 const doc = document.querySelector<HTMLDivElement>('#app')!;
-doc.append(
-  Promo(),
-  Menu(),
-  CallToAction(),
-  BrandShowcase(),
-  CategoryList(a),
-  Footer()
-);
+getCategories()
+  .then((categories: Categories[]) => {
+    doc.innerHTML = '';
+
+    doc.append(
+      Promo(),
+      Menu(),
+      CallToAction(),
+      BrandShowcase(),
+      CategoryList(categories),
+      Footer()
+    );
+  })
+  .catch((error) => {
+    console.error('Failed to fetch categories', error);
+  });

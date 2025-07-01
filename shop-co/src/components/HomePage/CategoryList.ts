@@ -1,6 +1,7 @@
+import type { Categories } from '../../types';
 import { CategoryListItem } from './CategoryListItem';
 
-export const CategoryList = (items: string[]): DocumentFragment => {
+export const CategoryList = (items: Categories[]): DocumentFragment => {
   const fragment = document.createDocumentFragment();
   const sectionTitle = document.createElement('div');
   sectionTitle.className = 'category-title';
@@ -14,8 +15,8 @@ export const CategoryList = (items: string[]): DocumentFragment => {
   catList.className = 'cat-list';
   catList.id = 'categories';
 
-  items.forEach((item) => {
-    catList.appendChild(CategoryListItem(item));
+  items.forEach(({ name }) => {
+    catList.appendChild(CategoryListItem(name));
   });
 
   fragment.append(sectionTitle, catList);
