@@ -1,6 +1,6 @@
 import axios from 'axios';
 //ts doesnt like 'types alias'
-import type { Category, Product } from '@myTypes/types';
+import type { Category, ProductsResponse } from '@myTypes/types';
 
 const API_BASE_URL = 'https://dummyjson.com';
 
@@ -16,9 +16,9 @@ export const getCategories = async (): Promise<Category[]> => {
   }
 };
 
-export const getProduct = async (prod: string): Promise<Product[]> => {
+export const getProducts = async (prod: string): Promise<ProductsResponse> => {
   try {
-    const response = await axios.get<Product[]>(
+    const response = await axios.get<ProductsResponse>(
       `${API_BASE_URL}/products/category/${prod}`
     );
     return response.data;

@@ -5,10 +5,8 @@ export const NotFound = (): HTMLElement => {
   notFound.innerHTML =
     /*html*/
     `
-    <div>
-      <img src='/assets/not-found.svg'></img>
-      <h3>This page doesn't exist. Try something else.</h3>
-    </div>
+    <img src='/assets/not-found.svg'></img>
+    <h3>This page doesn't exist. Try something else.</h3>
   `;
 
   return notFound;

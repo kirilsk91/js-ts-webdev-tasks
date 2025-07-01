@@ -4,7 +4,9 @@ export const Menu = (): HTMLElement => {
   menu.innerHTML =
     /*html*/
     `
-    <h1>SHOP.CO</h1>
+    <h1>
+      <a href='/'>SHOP.CO</a>
+    </h1>
     <div>
       <img src="/assets/cart.svg" alt="cart"/>
       <img src="/assets/profile.svg" alt="cart"/>

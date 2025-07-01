@@ -65,3 +65,10 @@ export type Product = {
   images: string[];
   thumbnail: string;
 };
+
+export type ProductsResponse = {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+};
