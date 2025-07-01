@@ -1,5 +1,5 @@
-import type { FooterLinks } from '../../types';
-import { footerLinkData } from '../../utils/data';
+import type { FooterLinks } from '../types';
+import { footerLinkData } from '../utils/data';
 
 export const footerLinkColums = (): HTMLElement => {
   const fragment = document.createDocumentFragment();

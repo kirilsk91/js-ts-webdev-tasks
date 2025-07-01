@@ -1,7 +1,7 @@
-import type { Categories } from '../../types';
+import type { Category } from '../../types';
 import { CategoryListItem } from './CategoryListItem';
 
-export const CategoryList = (items: Categories[]): DocumentFragment => {
+export const CategoryList = (items: Category[]): DocumentFragment => {
   const fragment = document.createDocumentFragment();
   const sectionTitle = document.createElement('div');
   sectionTitle.className = 'category-title';

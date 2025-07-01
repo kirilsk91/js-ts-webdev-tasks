@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import { Button } from '@shared/Button';
 
 export const FooterFloatSub = (): HTMLElement => {
   const float = document.createElement('div');

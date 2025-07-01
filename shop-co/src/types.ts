@@ -8,7 +8,7 @@ export type FooterLinks = {
   links: string[];
 };
 
-export type Categories = {
+export type Category = {
   slug: string;
   name: string;
   url: string;

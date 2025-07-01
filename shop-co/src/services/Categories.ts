@@ -1,11 +1,11 @@
 import axios from 'axios';
-import type { Categories } from '../types';
+import type { Category } from '../types';
 
 const API_BASE_URL = 'https://dummyjson.com';
 
-export const getCategories = async (): Promise<Categories[]> => {
+export const getCategories = async (): Promise<Category[]> => {
   try {
-    const response = await axios.get<Categories[]>(
+    const response = await axios.get<Category[]>(
       `${API_BASE_URL}/products/categories`
     );
     return response.data;

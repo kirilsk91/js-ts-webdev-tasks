@@ -1,29 +1,44 @@
 import './style.css';
+import '@shared/shared.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { Promo } from './components/HomePage/Promo';
-import { Menu } from './components/HomePage/Menu';
-import { BrandShowcase } from './components/HomePage/BrandShowcase';
-import { CallToAction } from './components/HomePage/Cta/CallToAction';
-import { CategoryList } from './components/HomePage/CategoryList';
-import { Footer } from './components/HomePage/Footer';
-import { getCategories } from './services/Categories';
-import type { Categories } from './types';
 
-const doc = document.querySelector<HTMLDivElement>('#app')!;
-getCategories()
-  .then((categories: Categories[]) => {
-    doc.innerHTML = '';
+import { Promo } from '@shared/Promo';
 
-    doc.append(
-      Promo(),
-      Menu(),
-      CallToAction(),
-      BrandShowcase(),
-      CategoryList(categories),
-      Footer()
-    );
+import { initHomePage } from './pages/Home';
+import { Menu } from '@shared/Menu';
+import { Footer } from '@shared/Footer';
+import Navigo from 'navigo';
+import { NotFound } from '@shared/NotFound';
+
+const router = new Navigo('/', { hash: true });
+const app = document.querySelector<HTMLDivElement>('#app')!;
+app.innerHTML = '';
+
+app.append(Promo(), Menu());
+
+// Container for dynamic page content
+const contentContainer = document.createElement('div');
+contentContainer.id = 'page-content';
+app.appendChild(contentContainer);
+
+app.appendChild(Footer());
+
+// Routing with Navigo
+router
+  .on({
+    '/': () => {
+      contentContainer.innerHTML = ''; // Clear previous content
+      initHomePage(contentContainer);
+    },
+    '/cart': () => {
+      contentContainer.innerHTML = '';
+      // initCartPage(contentContainer);
+      contentContainer.innerText = 'Cart Page - under construction';
+    },
   })
-  .catch((error) => {
-    console.error('Failed to fetch categories', error);
-  });
+  .notFound(() => {
+    contentContainer.innerHTML = '';
+    contentContainer.append(NotFound());
+  })
+  .resolve();
