@@ -15,11 +15,11 @@ export const CategoryList = (items: Category[]): DocumentFragment => {
   catList.className = 'cat-list';
   catList.id = 'categories';
 
-  items.forEach(({ name, slug }) => {
+  items.forEach(({ name, slug }): void => {
     catList.appendChild(CategoryListItem(name, slug));
   });
 
-  catList.addEventListener('click', (event) => {
+  catList.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement;
     //in case user clicks on label (heading)
     const catItem = target.closest('.cat-list-item') as HTMLElement | null;

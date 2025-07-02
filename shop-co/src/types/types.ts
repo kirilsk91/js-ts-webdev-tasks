@@ -72,3 +72,7 @@ export type ProductsResponse = {
   skip: number;
   limit: number;
 };
+
+export type SortOrder = {
+  order: 'asc' | 'desc';
+};

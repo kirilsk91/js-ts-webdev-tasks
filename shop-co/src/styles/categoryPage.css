@@ -84,6 +84,11 @@
   margin-top: 20px;
 }
 
+.menu-sort-item.active {
+  font-weight: 600;
+  font-size: 17px;
+}
+
 .menu-sort-button-apply {
   width: 247px;
   height: 48px;

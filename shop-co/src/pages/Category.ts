@@ -1,7 +1,7 @@
 import '@styles/categoryPage.css';
 
 import { Breadcrumbs } from '@components/Category/Breadcrumbs';
-import type { ProductsResponse } from '@myTypes/types';
+import type { ProductsResponse, SortOrder } from '@myTypes/types';
 import { getProducts } from '@services/Categories';
 import { SideMenu } from '@components/Category/SideMenu';
 import { Gallery } from '@components/Category/Gallery';
@@ -15,13 +15,26 @@ export const initCategoryPage = async (
   dyamicContainer.append(Breadcrumbs(slug));
 
   dyamicContainer.append(categoryWrapper);
-  try {
-    const products: ProductsResponse = await getProducts(slug);
-    console.log(products);
-    categoryWrapper.append(SideMenu(), Gallery(products, slug));
-  } catch (error) {
-    console.error('Some error', error);
-    //add placeholder
-    dyamicContainer.innerHTML = '<p>Failed to load content.</p>';
-  }
+
+  //move sidemenu out of render function to avoid duplicating
+  const sideMenu = SideMenu((selectedOrder) =>
+    renderCategoryContent(selectedOrder)
+  );
+  categoryWrapper.append(sideMenu);
+
+  const renderCategoryContent = async (order?: SortOrder): Promise<void> => {
+    //workaround to clean only the gallery list to avoid duplicating items on conequent requests
+    const existingGalleryWrap =
+      categoryWrapper.querySelector('.gallery-wrapper');
+    if (existingGalleryWrap) existingGalleryWrap.remove();
+
+    try {
+      const products: ProductsResponse = await getProducts(slug, order);
+      categoryWrapper.append(Gallery(products, slug));
+    } catch (error) {
+      console.error('Some error', error);
+    }
+  };
+
+  await renderCategoryContent();
 };
