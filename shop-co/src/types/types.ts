@@ -76,3 +76,15 @@ export type ProductsResponse = {
 export type SortOrder = {
   order: 'asc' | 'desc';
 };
+
+export type Brand = {
+  id: number;
+  brand?: string;
+};
+
+export type BrandsResponse = {
+  products: Brand[];
+  total: number;
+  skip: number;
+  limit: number;
+};

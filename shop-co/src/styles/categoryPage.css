@@ -2,7 +2,8 @@
   align-items: center;
   display: flex;
   border-top: 1px solid #0000001a;
-  padding: 30px 100px;
+  padding: 30px 0;
+  margin: 0px 100px;
 }
 
 .breadcrumb-row span {
@@ -37,17 +38,33 @@
 
 .side-menu {
   width: 295px;
-  height: 503px;
-  top: 204px;
-  left: 100px;
+  height: 100%;
   border-radius: 20px;
-  gap: 24px;
   border-width: 1px;
   padding-top: 20px;
   padding-right: 24px;
   padding-bottom: 20px;
   padding-left: 24px;
   border: 1px solid #0000001a;
+}
+
+.side-menu .form-check-input {
+  margin-top: 0;
+}
+
+.side-menu .form-check-input:checked {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
+
+.side-menu .form-check-input:focus {
+  box-shadow: none !important;
+  border-color: #6c757d !important;
+  outline: none !important;
+}
+
+.side-menu label {
+  width: fit-content;
 }
 
 .side-menu h4 {
@@ -58,6 +75,60 @@
   letter-spacing: 0%;
   vertical-align: middle;
   margin: 0;
+}
+
+.side-menu h5 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.side-menu span {
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3rem;
+  letter-spacing: 0%;
+  color: #00000099;
+  margin: 0;
+}
+
+.side-menu .no-brands {
+  cursor: text;
+}
+
+.filter-slider-wrapper h5 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.noUi-handle {
+  cursor: pointer !important;
+  box-shadow: none !important;
+}
+
+.noUi-connect {
+  background: #000000 !important;
+}
+
+.noUi-target,
+.noUi-connect,
+.noUi-base,
+.noUi-origin {
+  box-shadow: none !important;
 }
 
 .side-menu img {
@@ -81,7 +152,7 @@
   line-height: 100%;
   letter-spacing: 0%;
   color: #00000099;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .menu-sort-item.active {
@@ -108,6 +179,10 @@
   color: black;
 }
 
+.gallery-wrapper {
+  margin-left: 2rem;
+}
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -121,7 +196,6 @@
   font-size: 32px;
   line-height: 100%;
   color: #000;
-  padding-left: 50px;
 }
 
 .gallery-title::first-letter {
@@ -150,19 +224,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
   gap: 24px;
-  padding: 0 50px;
 }
 
 .gallery-item {
   width: 100%;
-  /* max-width: 295px; */
   border-radius: 20px;
   border: 1px solid #0000001a;
   overflow: hidden;
+  padding: 0 20px;
 }
 
 .gallery-item-thumbnail {
   margin-bottom: 15px;
+  border-bottom: 1px solid #0000001a;
+  width: 100%;
 }
 
 .gallery-item div {
@@ -236,3 +311,55 @@
   max-width: 100%;
   overflow-wrap: break-word;
 }
+
+.loading-indicator {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SPINNER */
+.loader {
+  height: 30px;
+  aspect-ratio: 3;
+  --c: no-repeat linear-gradient(#a7a7a7 0 0);
+  background: var(--c) calc(0 * 100% / 5) 50%, var(--c) calc(1 * 100% / 5) 50%,
+    var(--c) calc(2 * 100% / 5) 50%, var(--c) calc(3 * 100% / 5) 50%,
+    var(--c) calc(4 * 100% / 5) 50%, var(--c) calc(5 * 100% / 5) 50%;
+  background-size: calc(100% / 6 + 1px) 50%;
+  animation: l19 1s infinite cubic-bezier(0.5, 170, 0.5, -170);
+}
+@keyframes l19 {
+  14.28% {
+    background-position: calc(0 * 100% / 5) 51%, calc(1 * 100% / 5) 50%,
+      calc(2 * 100% / 5) 50%, calc(3 * 100% / 5) 50%, calc(4 * 100% / 5) 50%,
+      calc(5 * 100% / 5) 50%;
+  }
+  28.57% {
+    background-position: calc(0 * 100% / 5) 50%, calc(1 * 100% / 5) 51%,
+      calc(2 * 100% / 5) 50%, calc(3 * 100% / 5) 50%, calc(4 * 100% / 5) 50%,
+      calc(5 * 100% / 5) 50%;
+  }
+  42.85% {
+    background-position: calc(0 * 100% / 5) 50%, calc(1 * 100% / 5) 50%,
+      calc(2 * 100% / 5) 51%, calc(3 * 100% / 5) 50%, calc(4 * 100% / 5) 50%,
+      calc(5 * 100% / 5) 50%;
+  }
+  57.14% {
+    background-position: calc(0 * 100% / 5) 50%, calc(1 * 100% / 5) 50%,
+      calc(2 * 100% / 5) 50%, calc(3 * 100% / 5) 51%, calc(4 * 100% / 5) 50%,
+      calc(5 * 100% / 5) 50%;
+  }
+  71.42% {
+    background-position: calc(0 * 100% / 5) 50%, calc(1 * 100% / 5) 50%,
+      calc(2 * 100% / 5) 50%, calc(3 * 100% / 5) 50%, calc(4 * 100% / 5) 51%,
+      calc(5 * 100% / 5) 50%;
+  }
+  85.71% {
+    background-position: calc(0 * 100% / 5) 50%, calc(1 * 100% / 5) 50%,
+      calc(2 * 100% / 5) 50%, calc(3 * 100% / 5) 50%, calc(4 * 100% / 5) 50%,
+      calc(5 * 100% / 5) 51%;
+  }
+}
+/* SPINNER */

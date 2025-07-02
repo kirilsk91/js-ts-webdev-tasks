@@ -12,7 +12,7 @@ export const Gallery = (
   gallery.className = 'gallery';
 
   const galleryTitle = document.createElement('div');
-  galleryTitle.className = 'gallery-title row';
+  galleryTitle.className = 'gallery-title';
   galleryTitle.innerText = slug;
 
   if (products.length === 0) {
@@ -28,7 +28,7 @@ export const Gallery = (
   }
 
   const galleryList = document.createElement('div');
-  galleryList.className = 'gallery-list row';
+  galleryList.className = 'gallery-list';
 
   products.forEach((product: Product) => {
     galleryList.append(GalleryItem(product));
