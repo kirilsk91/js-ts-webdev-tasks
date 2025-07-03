@@ -1,7 +1,7 @@
 import '@styles/productPage.css';
 import '../style.css';
 
-import { Breadcrumbs } from '@components/Category/Breadcrumbs';
+import { Breadcrumbs } from '@shared/Breadcrumbs';
 import type { Product } from '@myTypes/types';
 import { getProduct } from '@services/Product';
 import { ProductGallery } from '@components/Product/ProductGallery';

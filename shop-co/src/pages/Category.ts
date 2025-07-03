@@ -1,6 +1,6 @@
 import '@styles/categoryPage.css';
 
-import { Breadcrumbs } from '@components/Category/Breadcrumbs';
+import { Breadcrumbs } from '@shared/Breadcrumbs';
 import type { ProductsResponse, SortOrder } from '@myTypes/types';
 import { getProducts } from '@services/Categories';
 import { SideMenu } from '@components/Category/SideMenu';
