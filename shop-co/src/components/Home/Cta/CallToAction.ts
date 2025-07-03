@@ -2,7 +2,7 @@ import { CtaTextOverlay } from './CtaTextOverlay';
 
 export const CallToAction = (): HTMLElement => {
   const cta = document.createElement('div');
-  cta.className = 'cta-wrapper';
+  cta.className = 'cta-wrapper col-12';
   cta.innerHTML =
     /*html*/
     `

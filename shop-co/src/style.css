@@ -15,7 +15,142 @@ input {
   outline: none;
 }
 
-body {
-  margin: 0;
-  font-family: 'Rubik', 'Poppins', sans-serif !important;
+/* COLORS */
+:root {
+  --color-primary: #000000;
+  --color-secondary: #f0f0f0;
+  --color-white: #ffffff;
+
+  --color-border: #0000001a;
+
+  --color-text-primary: #000000;
+  --color-text-secondary: #00000099;
 }
+/* COLORS */
+
+/* FIGMA */
+.text-color-white {
+  color: var(--color-white) !important;
+}
+
+.text-color-secondary {
+  color: var(--color-text-secondary) !important;
+}
+/* h1 */
+.poppins-64 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+}
+
+/* h1 */
+.rubik-64 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+}
+
+/* h2 */
+.poppins-48 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+}
+
+/* h2 */
+.poppins-40 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 45px;
+  letter-spacing: 0%;
+  color: var(--color-text-primary);
+}
+
+/* h2 */
+.rubik-40 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+}
+
+/* h3 */
+.poppins-32 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+}
+
+/* h4 */
+.rubik-17 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 19px;
+  letter-spacing: 0px;
+  color: var(--color-text-primary);
+}
+
+/* h5 */
+.rubik-14 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--color-text-secondary);
+}
+
+.fw-200 {
+  font-weight: 200 !important;
+}
+
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.fw-900 {
+  font-weight: 900 !important;
+}
+/* FIGMA */

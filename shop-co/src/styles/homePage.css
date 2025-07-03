@@ -1,22 +1,79 @@
-.category-title {
-  margin: 70px 0px;
+.cta-wrapper {
+  position: relative;
+  /* weird bug, when image re[eats its lowest 1px row up top */
+  height: 875px;
+  overflow: hidden;
 }
 
-.category-title h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  vertical-align: middle;
-  text-align: center;
+.cta-wrapper img.cta-bg {
+  width: 100%;
+  /* weird bug, when image re[eats its lowest 1px row up top */
+  transform: translateZ(0);
+}
+
+.cta-wrapper img.cta-star1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 5px;
+  right: 120px;
+}
+
+.cta-wrapper img.cta-star2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 230px;
+  left: 950px;
+}
+
+.cta-text-overlay {
+  top: 50%;
+  padding: 0px 100px;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #000;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.cta-stats-wrapper {
+  padding-top: 4rem;
+  display: flex;
+}
+
+.cta-stat-item {
+  padding-right: 50px;
+  padding-left: 50px;
+  border-right: 1px solid var(--color-border);
+}
+
+.cta-stat-item:first-child {
+  border-left: none;
+  padding-right: 50px;
+  padding-left: 0;
+}
+
+.cta-stat-item:last-child {
+  padding-right: 0;
+  padding-left: 50px;
+  border-right: none;
+}
+
+.brand-showcase {
+  background-color: var(--color-primary);
+}
+
+.brand-showcase img {
+  height: 35px;
 }
 
 .cat-list {
   display: grid;
   grid-template-columns: repeat(4, max-content);
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   justify-content: space-between;
   gap: 1rem;
   padding: 0 100px;

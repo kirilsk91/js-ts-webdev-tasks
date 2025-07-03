@@ -1,12 +1,14 @@
 export const Menu = (): HTMLElement => {
   const menu = document.createElement('header');
-  menu.className = 'menu-header';
+  menu.className = 'menu-header col-12 d-flex';
   menu.innerHTML =
     /*html*/
     `
-    <h1>
-      <a href='/'>SHOP.CO</a>
-    </h1>
+    <div>
+      <a href='/'>
+        <span class='poppins-32 fw-800'>SHOP.CO</span>
+      </a>
+    </div>
     <div>
       <img src="/assets/cart.svg" alt="cart"/>
       <img src="/assets/profile.svg" alt="cart"/>

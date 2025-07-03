@@ -11,11 +11,11 @@ export const CtaStats = (ctaStats: CtaStatPair[]): HTMLElement => {
     ctaStatItem.className = 'cta-stat-item';
 
     const numberElem = document.createElement('div');
-    numberElem.className = 'cta-stat-number';
+    numberElem.className = 'rubik-40';
     numberElem.textContent = `${Number(num).toLocaleString('en-US')}+`;
 
     const textElem = document.createElement('div');
-    textElem.className = 'cta-stat-text';
+    textElem.className = 'rubik-17 text-color-secondary';
     textElem.textContent = text;
 
     ctaStatItem.append(numberElem);

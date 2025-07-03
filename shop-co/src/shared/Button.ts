@@ -8,7 +8,7 @@ export const Button = (
   button.innerText = buttonText;
 
   if (scrollAction) {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (): void => {
       const destination = document.getElementById('categories');
       if (destination) {
         destination.scrollIntoView({ behavior: 'smooth' });

@@ -4,12 +4,8 @@ import { CategoryListItem } from './CategoryListItem';
 export const CategoryList = (items: Category[]): DocumentFragment => {
   const fragment = document.createDocumentFragment();
   const sectionTitle = document.createElement('div');
-  sectionTitle.className = 'category-title';
-  sectionTitle.innerHTML =
-    /*html*/
-    `
-  <h1>Categories</h1>
-  `;
+  sectionTitle.className = 'category-title poppins-48 fw-800 py-5';
+  sectionTitle.innerText = 'Categories';
 
   const catList = document.createElement('section');
   catList.className = 'cat-list';
