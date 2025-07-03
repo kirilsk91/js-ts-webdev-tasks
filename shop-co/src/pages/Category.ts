@@ -52,10 +52,6 @@ export const initCategoryPage = async (
         : [];
 
       const storedPriceRange = localStorage.getItem('selectedPriceRange');
-      // const selectedPriceRange: [number, number] = storedPriceRange
-      //   ? JSON.parse(storedPriceRange)
-      //   : // do i need this
-      //     [10, 2000];
 
       let products = productsResponse.products;
 

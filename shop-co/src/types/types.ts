@@ -20,6 +20,12 @@ export type CategoryRoute = {
   };
 };
 
+export type ProductRoute = {
+  data: {
+    productId: string;
+  };
+};
+
 type Review = {
   rating: number;
   comment: string;

@@ -8,7 +8,7 @@ type SliderHTMLElement = HTMLElement & { noUiSlider: API };
 export const PriceFilterSlider = (): HTMLElement => {
   const filterSlider = document.createElement('div');
   filterSlider.className = 'filter-slider-wrapper';
-  filterSlider.innerHTML = `
+  filterSlider.innerHTML = /*html*/ `
     <h5>Price</h5>
     <div class="slider mb-3"></div>
     <div class="d-flex gap-2">

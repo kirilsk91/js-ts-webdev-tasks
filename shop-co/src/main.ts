@@ -11,7 +11,8 @@ import { Footer } from '@shared/Footer';
 import Navigo from 'navigo';
 import { NotFound } from '@shared/NotFound';
 import { initCategoryPage } from './pages/Category';
-import type { CategoryRoute } from '@myTypes/types';
+import type { CategoryRoute, ProductRoute } from '@myTypes/types';
+import { initProductPage } from './pages/Products';
 
 const router = new Navigo('/', { hash: true });
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -34,6 +35,10 @@ router
     '/category/:slug': ({ data }: CategoryRoute) => {
       contentContainer.innerHTML = '';
       initCategoryPage(contentContainer, data?.slug);
+    },
+    '/product/:productId': ({ data }: ProductRoute) => {
+      contentContainer.innerHTML = '';
+      initProductPage(contentContainer, data?.productId);
     },
   })
   .notFound(() => {

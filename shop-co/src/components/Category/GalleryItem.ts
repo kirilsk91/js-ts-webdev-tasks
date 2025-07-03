@@ -3,11 +3,11 @@ import { Price } from '@shared/Price';
 import { Rating } from '@shared/Rating';
 
 export const GalleryItem = (item: Product): HTMLElement => {
-  const { thumbnail, title, rating, price, discountPercentage } = item;
+  const { thumbnail, title, rating, price, discountPercentage, id } = item;
 
   const galleryItem = document.createElement('div');
   galleryItem.className = 'gallery-item flex-column justify-content-between';
-
+  galleryItem.dataset.productId = id.toString();
   galleryItem.innerHTML =
     /*html*/
     `

@@ -19,7 +19,7 @@
   text-transform: uppercase;
 }
 
-.breadcrumb-row span.bc-category {
+.breadcrumb-row span.bc-category.active {
   color: #000000;
 }
 

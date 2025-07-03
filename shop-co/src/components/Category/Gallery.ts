@@ -34,6 +34,17 @@ export const Gallery = (
     galleryList.append(GalleryItem(product));
   });
 
+  galleryList.addEventListener('click', (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    //in case user clicks on some label (heading)
+    const galleryItem = target.closest('.gallery-item') as HTMLElement | null;
+
+    if (galleryItem && galleryItem.dataset.productId) {
+      const pId = galleryItem.dataset.productId;
+      window.location.hash = `/product/${pId}`;
+    }
+  });
+
   gallery.append(galleryTitle, galleryList);
 
   galleryWrapper.append(gallery);
