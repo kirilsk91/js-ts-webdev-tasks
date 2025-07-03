@@ -1,7 +1,6 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* MOVE TO SHARED */
 button {
   outline: none;
   border: none;
@@ -16,7 +15,6 @@ input {
   outline: none;
 }
 
-/* MOVE TO SHARED */
 body {
   margin: 0;
   font-family: 'Rubik', 'Poppins', sans-serif !important;

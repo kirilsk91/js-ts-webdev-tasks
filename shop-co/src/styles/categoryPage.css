@@ -293,6 +293,10 @@
   text-decoration: line-through;
 }
 
+.rating {
+  align-items: center;
+}
+
 .rating img {
   margin-right: 4px;
 }
@@ -312,14 +316,15 @@
 }
 
 .discount {
+  align-items: center;
+  display: flex;
   color: #ff3333;
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 100%;
   letter-spacing: 0%;
-  width: 62px;
-  height: 26px;
+  height: 30px;
   border-radius: 62px;
   gap: 12px;
   padding-top: 6px;

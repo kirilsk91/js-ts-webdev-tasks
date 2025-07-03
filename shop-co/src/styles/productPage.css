@@ -9,4 +9,193 @@
 
 .product-wrapper {
   padding: 0 100px;
+  /* border: 1px solid red; */
+  height: 530px;
+}
+
+.product-gallery-items {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.product-gallery-item {
+  cursor: pointer;
+  /* width: 100%; */
+  max-height: 168px;
+  object-fit: contain;
+
+  border-radius: 20px;
+  margin: 0.5rem 0;
+  background-color: #0000001a;
+}
+
+.product-gallery-item.active {
+  border: 3px solid #0000002d;
+}
+
+.product-gallery-item:first-child {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.product-gallery-item:last-child {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.product-gallery-pic {
+  max-height: 530px;
+  border-radius: 20px;
+  background-color: #0000001a;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-gallery-pic img {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* .product-info div {
+  margin-bottom: 15px;
+} */
+
+.product-info-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.product-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info .gallery-item-price {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.product-info .gallery-item-price.old {
+  color: #00000066;
+  text-decoration: line-through;
+}
+
+.product-info .rating img {
+  height: 1.5rem;
+  margin-right: 4px;
+}
+
+.product-info .rating-num {
+  margin-left: 10px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+}
+
+.product-info .rating-num span {
+  color: #00000099;
+}
+
+.product-info .discount {
+  align-items: center;
+  display: flex;
+  color: #ff3333;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  height: 33px;
+  border-radius: 62px;
+  gap: 12px;
+  padding-top: 6px;
+  padding-right: 14px;
+  padding-bottom: 6px;
+  padding-left: 14px;
+  background-color: #ff33331a;
+}
+
+.product-info .price-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  align-items: center;
+}
+
+.product-info-description {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  color: #00000099;
+}
+
+.product-brand-wrap {
+  border-top: 1px solid #0000001a;
+  border-bottom: 1px solid #0000001a;
+  padding: 25px 0;
+  margin-top: 25px;
+}
+
+.product-brand-wrap h4 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000099;
+  margin-bottom: 25px;
+}
+
+.product-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.product-stock-wrap {
+  border-bottom: 1px solid #0000001a;
+  padding: 25px 0;
+}
+
+.product-stock-wrap h4 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000099;
+  margin-bottom: 25px;
+}
+
+.product-stock-num {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #000000;
 }
