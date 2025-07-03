@@ -6,6 +6,6 @@ export const CategoryListItem = (item: string, slug: string): HTMLElement => {
   const title = document.createElement('h1');
   title.textContent = item;
 
-  catListItem.appendChild(title);
+  catListItem.append(title);
   return catListItem;
 };

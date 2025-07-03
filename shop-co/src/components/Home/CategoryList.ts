@@ -16,7 +16,7 @@ export const CategoryList = (items: Category[]): DocumentFragment => {
   catList.id = 'categories';
 
   items.forEach(({ name, slug }): void => {
-    catList.appendChild(CategoryListItem(name, slug));
+    catList.append(CategoryListItem(name, slug));
   });
 
   catList.addEventListener('click', (event: MouseEvent) => {

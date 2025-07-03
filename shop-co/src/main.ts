@@ -21,9 +21,9 @@ app.append(Promo(), Menu());
 
 const contentContainer = document.createElement('div');
 contentContainer.id = 'page-content';
-app.appendChild(contentContainer);
+app.append(contentContainer);
 
-app.appendChild(Footer());
+app.append(Footer());
 
 router
   .on({

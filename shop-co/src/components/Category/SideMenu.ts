@@ -3,6 +3,11 @@ import { Button } from '@shared/Button';
 import { BrandList } from './BrandList';
 import { getProductBrands } from '@services/Categories';
 import { PriceFilterSlider } from './PriceFilterSlider';
+import { RatingFilter } from './RatingFilter';
+import type { API } from 'nouislider';
+
+//some copy pasted stuff from stack to deal with types
+type SliderHTMLElement = HTMLElement & { noUiSlider: API };
 
 export const SideMenu = async (
   onChangeSort: (order: SortOrder | undefined) => void,
@@ -36,7 +41,11 @@ export const SideMenu = async (
     try {
       const productBrands = await getProductBrands(slug);
       const { products } = productBrands;
-      accordionBody.append(BrandList(products), PriceFilterSlider());
+      accordionBody.append(
+        BrandList(products),
+        PriceFilterSlider(),
+        RatingFilter()
+      );
     } catch (error) {
       throw error;
     }
@@ -88,9 +97,31 @@ export const SideMenu = async (
   ) as HTMLButtonElement;
   resetFilterButton.addEventListener('click', () => {
     localStorage.removeItem('selectedFilterBrands');
+    localStorage.removeItem('selectedFilterRatings');
+    localStorage.removeItem('selectedPriceRange');
     menu
       .querySelectorAll<HTMLInputElement>('input[name="brand-filter"]:checked')
       .forEach((cb) => (cb.checked = false));
+    menu
+      .querySelectorAll<HTMLInputElement>('input[name="rating-filter"]:checked')
+      .forEach((cb) => (cb.checked = false));
+
+    // reset slider values
+    const sliderWrapper = menu.querySelector('.filter-slider-wrapper');
+    const slider = sliderWrapper?.querySelector<HTMLElement>(
+      '.slider'
+    ) as SliderHTMLElement;
+    if (slider && slider.noUiSlider) {
+      slider.noUiSlider.set([0, 2000]);
+    }
+    const minInput =
+      sliderWrapper?.querySelector<HTMLInputElement>('.min-price-input');
+    const maxInput =
+      sliderWrapper?.querySelector<HTMLInputElement>('.max-price-input');
+
+    if (minInput) minInput.value = '0';
+    if (maxInput) maxInput.value = '2000';
+
     menu
       .querySelectorAll('.menu-sort-item')
       .forEach((item) => item.classList.remove('active'));

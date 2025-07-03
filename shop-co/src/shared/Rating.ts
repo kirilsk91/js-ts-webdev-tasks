@@ -9,7 +9,7 @@ export const Rating = (rt: number): HTMLElement => {
     const fullStar = document.createElement('img');
     fullStar.src = '/assets/full-star.svg';
     fullStar.alt = 'star';
-    rating.appendChild(fullStar);
+    rating.append(fullStar);
     i++;
   }
 
@@ -17,7 +17,7 @@ export const Rating = (rt: number): HTMLElement => {
     const halfStar = document.createElement('img');
     halfStar.src = '/assets/half-star.svg';
     halfStar.alt = 'half star';
-    rating.appendChild(halfStar);
+    rating.append(halfStar);
   }
 
   const ratingNum = document.createElement('span');

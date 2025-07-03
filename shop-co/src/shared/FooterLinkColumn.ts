@@ -10,19 +10,19 @@ export const footerLinkColums = (): HTMLElement => {
 
     const footerColTitle = document.createElement('h4');
     footerColTitle.textContent = colTitle;
-    column.appendChild(footerColTitle);
+    column.append(footerColTitle);
 
     links.forEach((item: string) => {
       const link = document.createElement('h5');
       link.textContent = item;
-      column.appendChild(link);
+      column.append(link);
     });
-    fragment.appendChild(column);
+    fragment.append(column);
   });
 
   const container = document.createElement('span');
   container.className = 'footer-bot';
-  container.appendChild(fragment);
+  container.append(fragment);
 
   return container;
 };

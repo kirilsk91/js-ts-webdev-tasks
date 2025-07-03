@@ -15,9 +15,9 @@ export const BrandList = (brands: Brand[]): HTMLElement => {
     return brandList;
   }
 
-  const savedBrandsRaw = localStorage.getItem('selectedFilterBrands');
-  const savedBrands: string[] = savedBrandsRaw
-    ? JSON.parse(savedBrandsRaw)
+  const savedBrandsLocal = localStorage.getItem('selectedFilterBrands');
+  const savedBrands: string[] = savedBrandsLocal
+    ? JSON.parse(savedBrandsLocal)
     : [];
 
   uniqueBrandSet.forEach((brand) => {
@@ -40,7 +40,7 @@ export const BrandList = (brands: Brand[]): HTMLElement => {
     span.style.marginLeft = '0.5rem';
 
     label.append(checkbox, span);
-    brandList.appendChild(label);
+    brandList.append(label);
   });
 
   brandList.addEventListener('change', () => {

@@ -21,6 +21,6 @@ export const FooterFloatSub = (): HTMLElement => {
 
   const floatBtn = Button('Subscribe to Newsletter', 'float-button');
   const placeholder = float.querySelector('#float-btn-placeholder');
-  placeholder?.appendChild(floatBtn);
+  placeholder?.append(floatBtn);
   return float;
 };

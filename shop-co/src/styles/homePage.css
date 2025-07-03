@@ -34,7 +34,6 @@
 .cat-list-item:hover {
   background-color: #cccccc;
   cursor: pointer;
-  transform: scale(1.03);
 }
 
 .cat-list-item h1 {

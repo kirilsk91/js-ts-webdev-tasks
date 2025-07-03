@@ -12,6 +12,9 @@ export const initCategoryPage = async (
 ): Promise<void> => {
   //remove filter brands from storage on component rerender
   localStorage.removeItem('selectedFilterBrands');
+  localStorage.removeItem('selectedFilterRatings');
+  localStorage.removeItem('selectedPriceRange');
+
   const categoryWrapper = document.createElement('div');
   categoryWrapper.className = 'category-wrapper d-flex justify-content-between';
   dyamicContainer.append(Breadcrumbs(slug));
@@ -39,19 +42,52 @@ export const initCategoryPage = async (
     try {
       const productsResponse: ProductsResponse = await getProducts(slug, order);
 
-      const stored = localStorage.getItem('selectedFilterBrands');
-      const selectedFilterBrands: string[] = stored ? JSON.parse(stored) : [];
-      let filteredProducts = productsResponse.products;
+      const storedBrands = localStorage.getItem('selectedFilterBrands');
+      const selectedFilterBrands: string[] = storedBrands
+        ? JSON.parse(storedBrands)
+        : [];
+      const storedRatings = localStorage.getItem('selectedFilterRatings');
+      const selectedFilterRatings: string[] = storedRatings
+        ? JSON.parse(storedRatings)
+        : [];
+
+      const storedPriceRange = localStorage.getItem('selectedPriceRange');
+      // const selectedPriceRange: [number, number] = storedPriceRange
+      //   ? JSON.parse(storedPriceRange)
+      //   : // do i need this
+      //     [10, 2000];
+
+      let products = productsResponse.products;
 
       if (selectedFilterBrands.length) {
-        filteredProducts = filteredProducts.filter((p) =>
-          selectedFilterBrands.includes(p.brand)
+        products = products.filter((p) => {
+          return selectedFilterBrands.includes(p.brand);
+        });
+      }
+
+      if (selectedFilterRatings.length) {
+        const numericRatings = selectedFilterRatings.map(Number);
+        products = products.filter((p) =>
+          numericRatings.some((minRating) => p.rating >= minRating)
         );
       }
+
+      if (storedPriceRange) {
+        try {
+          const parsed = JSON.parse(storedPriceRange) as [number, number];
+          if (Array.isArray(parsed) && parsed.length === 2) {
+            const [minPrice, maxPrice] = parsed;
+            products = products.filter(
+              (p) => p.price >= minPrice && p.price <= maxPrice
+            );
+          }
+        } catch {
+          // Do nothing if parsing fails
+        }
+      }
+
       loadingIndicator.remove();
-      categoryWrapper.append(
-        Gallery({ ...productsResponse, products: filteredProducts }, slug)
-      );
+      categoryWrapper.append(Gallery({ ...productsResponse, products }, slug));
     } catch (error) {
       console.error('Some error', error);
     }

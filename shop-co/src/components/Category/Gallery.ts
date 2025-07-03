@@ -22,7 +22,7 @@ export const Gallery = (
       /*html*/
       `
     <img src='/assets/not-found.svg' alt='no items'/>
-    <h3>This category has no items unfortunately.</h3>`;
+    <h3>Nothing was found.</h3>`;
     galleryWrapper.append(galleryTitle, noItems);
     return galleryWrapper;
   }

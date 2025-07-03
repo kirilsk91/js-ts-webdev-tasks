@@ -18,11 +18,11 @@ export const CtaStats = (ctaStats: CtaStatPair[]): HTMLElement => {
     textElem.className = 'cta-stat-text';
     textElem.textContent = text;
 
-    ctaStatItem.appendChild(numberElem);
-    ctaStatItem.appendChild(textElem);
-    fragment.appendChild(ctaStatItem);
+    ctaStatItem.append(numberElem);
+    ctaStatItem.append(textElem);
+    fragment.append(ctaStatItem);
   });
 
-  statWrapper.appendChild(fragment);
+  statWrapper.append(fragment);
   return statWrapper;
 };

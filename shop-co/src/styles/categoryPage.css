@@ -50,6 +50,7 @@
 
 .side-menu .form-check-input {
   margin-top: 0;
+  cursor: pointer;
 }
 
 .side-menu .form-check-input:checked {
@@ -84,7 +85,6 @@
   line-height: 100%;
   letter-spacing: 0%;
   vertical-align: middle;
-  margin: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -110,9 +110,8 @@
   line-height: 100%;
   letter-spacing: 0%;
   vertical-align: middle;
-  margin: 0;
   margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 0.5rem;
 }
 
 .noUi-handle {
@@ -129,6 +128,27 @@
 .noUi-base,
 .noUi-origin {
   box-shadow: none !important;
+}
+
+.rating-filter-wrap h5 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating-stars {
+  margin-bottom: 0.3rem !important;
+}
+
+.rating-stars img {
+  width: 1rem !important;
+  height: 1rem !important;
+  margin-right: 0.3rem !important;
 }
 
 .side-menu img {
@@ -232,6 +252,11 @@
   border: 1px solid #0000001a;
   overflow: hidden;
   padding: 0 20px;
+}
+
+.gallery-item:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
 }
 
 .gallery-item-thumbnail {

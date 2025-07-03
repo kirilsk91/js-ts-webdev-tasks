@@ -26,7 +26,7 @@ export const getProducts = async (
   order?: SortOrder
 ): Promise<ProductsResponse> => {
   const params = order ? `&sortBy=price&order=${order}` : '';
-  const endpoint = `${API_BASE_URL}/products/category/${prod}?limit=50${params}`;
+  const endpoint = `${API_BASE_URL}/products/category/${prod}?limit=50&&select=thumbnail,title,rating,price,discountPercentage,brand${params}`;
 
   try {
     const response = await axios.get<ProductsResponse>(endpoint);
