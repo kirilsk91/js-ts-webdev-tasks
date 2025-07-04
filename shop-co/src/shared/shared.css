@@ -67,11 +67,11 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  border: 2px solid #00000033;
+  border: 2px solid var(--color-border);
   border-radius: 50%;
   overflow: hidden;
   margin-right: 8px;
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 .footer-brand-column a.footer-fb-logo {
@@ -127,7 +127,7 @@
   padding-right: 64px;
   padding-bottom: 36px;
   padding-left: 64px;
-  background-color: #000000;
+  background-color: var(--color-primary);
   align-items: center;
 }
 
@@ -140,7 +140,7 @@
   padding-right: 16px;
   padding-bottom: 12px;
   padding-left: 16px;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .float-input {
@@ -153,7 +153,7 @@
   padding-right: 16px;
   padding-bottom: 12px;
   padding-left: 16px;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .float-input-icon-wrapper {

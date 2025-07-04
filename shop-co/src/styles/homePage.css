@@ -32,7 +32,6 @@
   padding: 0px 100px;
   position: absolute;
   transform: translateY(-50%);
-  color: #000;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -74,13 +73,13 @@
 .cat-list-item {
   min-height: 370px;
   border-radius: 20px;
-  background-color: #f0eeed;
+  background-color: var(--color-card-bg);
   overflow-wrap: anywhere;
   word-break: break-word;
   width: 100%;
 }
 
 .cat-list-item:hover {
-  background-color: #cccccc;
+  background-color: var(--color-card-bg-hover);
   cursor: pointer;
 }

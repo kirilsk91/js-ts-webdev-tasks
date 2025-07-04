@@ -26,6 +26,8 @@ input {
   --color-white: #ffffff;
 
   --color-border: #0000001a;
+  --color-card-bg: #f0f0f0;
+  --color-card-bg-hover: #cccccc;
 
   --color-text-primary: #000000;
   --color-text-secondary: #00000099;
