@@ -8,19 +8,18 @@ export const FooterFloatSub = (): HTMLElement => {
     /*html*/
     `
   <div class='col-6'>
-  <h1>STAY UP TO DATE ABOUT OUR LATEST OFFERS</h1>
+  <h1 class='poppins-40 text-color-white'>STAY UP TO DATE ABOUT OUR LATEST OFFERS</h1>
   </div>
-  <div class='col-4'>
+  <div class='col-4 float-input-group'>
     <div class='float-input-icon-wrapper'>
-      <input placeholder='Enter your email address' class='float-input' type='email'/>
+      <input placeholder='Enter your email address' class='float-input rubik-17' type='email'/>
       <img src='/assets/email.svg' alt='email icon'/>
     </div>
-    <span id="float-btn-placeholder"></span>
   </div>
   `;
-
-  const floatBtn = Button('Subscribe to Newsletter', 'float-button');
-  const placeholder = float.querySelector('#float-btn-placeholder');
-  placeholder?.append(floatBtn);
+  const floatInputGroup = float.querySelector('.float-input-group');
+  floatInputGroup?.append(
+    Button('Subscribe to Newsletter', 'float-button rubik-17 fw-500')
+  );
   return float;
 };

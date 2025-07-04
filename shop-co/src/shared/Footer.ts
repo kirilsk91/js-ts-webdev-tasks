@@ -6,41 +6,44 @@ export const Footer = (): HTMLElement => {
   footerWrapper.className = 'footer-wrapper';
 
   const footer = document.createElement('footer');
-  footer.className = 'footer';
+  footer.className = 'footer px-100';
 
   const footerTop = document.createElement('div');
-  footerTop.className = 'footer-top';
+  footerTop.className = 'footer-top container';
 
-  const footerBrandColumn = document.createElement('div');
-  footerBrandColumn.className = 'footer-brand-column';
-  footerBrandColumn.innerHTML =
+  footerTop.innerHTML =
     /*html*/
     `
-  <h1>SHOP.CO</h1>
-  <p>We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+  <div class='row justify-content-between'>
+    <div class='col footer-brand-column ps-0'>
+      <span class="poppins-32 fw-800">SHOP.CO</span>
+      <p class='rubik-14 m-0 pt-4 pb-5 text-color-secondary' style='line-height: 1.3rem;'>We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+      <div class='footer-links d-flex gap-2'>
+        <a href="/"><img src='/assets/twitter-logo.svg'/></a>
+        <a href="/" class='footer-fb-logo'><img src='/assets/fb-logo.svg'/></a>
+        <a href="/"><img src='/assets/insta-logo.svg'/></a>
+        <a href="/"><img src='/assets/github-logo.svg'/></a>
+      </div>
+    </div>
+  </div>
   `;
 
-  const footerLinks = document.createElement('div');
-  footerLinks.className = 'footer-links';
+  const footerTopRow = footerTop.querySelector('.row');
+  footerTopRow?.append(footerLinkColums());
 
-  footerLinks.innerHTML =
+  const footerBot = document.createElement('div');
+  footerBot.className = 'footer-bot pt-5';
+
+  const currentYear = new Date().getFullYear();
+
+  footerBot.innerHTML =
     /*html*/
     `
-  <a href="/"><img src='/assets/twitter-logo.svg'/></a>
-  <a href="/" class='footer-fb-logo'><img src='/assets/fb-logo.svg'/></a>
-  <a href="/"><img src='/assets/insta-logo.svg'/></a>
-  <a href="/"><img src='/assets/github-logo.svg'/></a>
-
-  `;
-
-  const footerBase = document.createElement('div');
-  footerBase.className = 'footer-base';
-  footerBase.innerHTML =
-    /*html*/
-    `
-    <div class='footer-base-inner-wrapper'>
-      <p>Shop.co © 2000-2023, All Rights Reserved</p>
-      <div>
+    <div class='footer-bot-wrap align-items-center pt-4 pb-5 d-flex justify-content-between'>
+      <div class='col-4'style="width: fit-content;">
+        <p class='rubik-14 m-0'>Shop.co © ${currentYear}, All Rights Reserved</p>
+      </div>
+      <div class='col-4' style="width: fit-content;">
         <img src='/assets/visa.svg' alt='visa'/>
         <img src='/assets/mastercard.svg' alt='mastercard'/>
         <img src='/assets/paypal.svg' alt='paypal'/>
@@ -49,13 +52,8 @@ export const Footer = (): HTMLElement => {
       </div>
     </div>
   `;
-
-  footerBrandColumn.append(footerLinks);
-  footerTop.append(footerBrandColumn);
-  footer.append(footerTop);
-  footer.append(footerLinkColums());
+  footer.append(footerTop, footerBot);
   footerWrapper.append(footer);
-  footerWrapper.append(footerBase);
   footerWrapper.prepend(FooterFloatSub());
   return footerWrapper;
 };

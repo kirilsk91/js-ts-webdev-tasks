@@ -71,34 +71,16 @@
   height: 35px;
 }
 
-.cat-list {
-  display: grid;
-  grid-template-columns: repeat(4, max-content);
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0 100px;
-}
-
 .cat-list-item {
-  width: 410px;
-  height: 400px;
+  min-height: 370px;
   border-radius: 20px;
   background-color: #f0eeed;
-  align-items: center;
-  display: flex;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  width: 100%;
 }
 
 .cat-list-item:hover {
   background-color: #cccccc;
   cursor: pointer;
-}
-
-.cat-list-item h1 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  font-size: 84px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  word-break: break-all;
 }

@@ -4,7 +4,7 @@ export const RatingFilter = (): HTMLElement => {
 
   const title = document.createElement('h5');
   title.textContent = 'Rating';
-  ratingFilterWrapper.appendChild(title);
+  ratingFilterWrapper.append(title);
 
   const savedRatingsLocal = localStorage.getItem('selectedFilterRatings');
   const savedRatings: number[] = savedRatingsLocal

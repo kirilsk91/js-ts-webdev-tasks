@@ -15,6 +15,10 @@ input {
   outline: none;
 }
 
+.container {
+  max-width: 100% !important;
+}
+
 /* COLORS */
 :root {
   --color-primary: #000000;
