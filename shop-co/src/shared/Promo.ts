@@ -13,7 +13,6 @@ export const Promo = (): HTMLElement => {
   const closeIcon = promoBanner.querySelector('.close-promo-cta');
   if (closeIcon) {
     closeIcon.addEventListener('click', (): void => {
-      console.log(closeIcon);
       promoBanner.className = 'd-none';
     });
   }

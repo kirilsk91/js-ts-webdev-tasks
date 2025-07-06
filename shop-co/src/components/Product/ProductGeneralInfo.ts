@@ -10,16 +10,16 @@ export const ProductGeneralInfo = (
   description.innerHTML =
     /*html*/
     `
-    <span class='product-brand-descr'>
+    <span class='rubik-17 text-color-secondary'>
       ${descr}
     </span>
-    <div class='product-brand-wrap'>
-      <h4>Brand</h4>
-      <div class='product-brand'>${brand}</div>
+    <div class='product-brand-wrap py-4 my-4'>
+      <h4 class='rubik-17 text-color-secondary'>Brand</h4>
+      <div class='poppins-24'>${brand}</div>
     </div>
     <div class='product-stock-wrap'>
-      <h4>${availabilityStatus}</h4>
-      <div class='product-stock-num'>${stock} items</div>
+      <h4 class='rubik-17 text-color-secondary'>${availabilityStatus}</h4>
+      <div class='poppins-24'>${stock} items</div>
     </div>
   `;
 

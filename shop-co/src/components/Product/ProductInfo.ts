@@ -22,7 +22,7 @@ export const ProductInfo = (product: Product): HTMLElement => {
     /*html*/
     `
   <div class='product-info'>
-    <div class='product-info-title'>${title}</div>
+    <div class='poppins-40'>${title}</div>
   </div>
   `;
 

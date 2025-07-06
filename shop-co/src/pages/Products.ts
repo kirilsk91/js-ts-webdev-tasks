@@ -12,7 +12,7 @@ export const initProductPage = async (
   productId: string
 ): Promise<void> => {
   const productWrapper = document.createElement('div');
-  productWrapper.className = 'product-wrapper d-flex justify-content-between';
+  productWrapper.className = 'product-wrapper px-100 d-flex';
 
   try {
     const productResponse: Product = await getProduct(productId);

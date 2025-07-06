@@ -17,7 +17,7 @@ export const initCategoryPage = async (
   localStorage.removeItem('selectedPriceRange');
 
   const categoryWrapper = document.createElement('div');
-  categoryWrapper.className = 'category-wrapper px-100 d-flex flex-wrap';
+  categoryWrapper.className = 'px-100 d-flex flex-wrap';
   dyamicContainer.append(Breadcrumbs(slug), categoryWrapper);
 
   //move sidemenu out of render function to avoid duplicating
