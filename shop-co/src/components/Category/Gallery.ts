@@ -6,29 +6,26 @@ export const Gallery = (
   slug: string
 ): HTMLElement => {
   const galleryWrapper = document.createElement('div');
-  galleryWrapper.className = 'gallery-wrapper col';
-
-  const gallery = document.createElement('div');
-  gallery.className = 'gallery';
+  galleryWrapper.className = 'gallery-wrapper col ms-5';
 
   const galleryTitle = document.createElement('div');
-  galleryTitle.className = 'gallery-title';
+  galleryTitle.className = 'gallery-title rubik-32 mb-4';
   galleryTitle.innerText = slug;
 
   if (products.length === 0) {
     const noItems = document.createElement('div');
-    noItems.className = `no-gallery-items`;
+    noItems.className = `d-flex flex-column justify-content-center align-items-center h-100`;
     noItems.innerHTML =
       /*html*/
       `
     <img src='/assets/not-found.svg' alt='no items'/>
-    <h3>Nothing was found.</h3>`;
+    <h3 class='rubik-32 mt-5'>Nothing was found.</h3>`;
     galleryWrapper.append(galleryTitle, noItems);
     return galleryWrapper;
   }
 
   const galleryList = document.createElement('div');
-  galleryList.className = 'gallery-list';
+  galleryList.className = 'gallery-list row g-4';
 
   products.forEach((product: Product) => {
     galleryList.append(GalleryItem(product));
@@ -45,9 +42,7 @@ export const Gallery = (
     }
   });
 
-  gallery.append(galleryTitle, galleryList);
-
-  galleryWrapper.append(gallery);
+  galleryWrapper.append(galleryTitle, galleryList);
 
   return galleryWrapper;
 };

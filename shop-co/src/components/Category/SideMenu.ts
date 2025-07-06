@@ -14,25 +14,22 @@ export const SideMenu = async (
   slug: string
 ): Promise<HTMLElement> => {
   const menu = document.createElement('div');
-  menu.className = 'side-menu';
-  //add boostrap classes later
+  menu.className = 'side-menu col-3 d-flex flex-column w-auto h-100';
+
   menu.innerHTML =
     /*html*/
     `
     <div class='d-flex justify-content-between align-items-center'>
-      <h4>Filters</h4>
+      <span class='rubik-20'>Filters</span>
       <img src='/assets/filter.svg' role="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse" aria-expanded="false" aria-controls="filtersCollapse"/>
     </div>
-
-    <div id="filtersCollapse" class="collapse mb-3">
-      <div class="accordion-body pt-3">
-        <h5>Brands</h5>
-      </div>
+    <div id="filtersCollapse" class="collapse">
+      <div class="accordion-body pt-3"></div>
     </div>
     <div class='menu-sort-items'>
-      <h4>Sort by Price</h4>
-      <div class='menu-sort-item' data-sort='asc'>Ascending</div>
-      <div class='menu-sort-item' data-sort='desc'>Descending</div>
+      <span class='rubik-20'>Sort by Price</span>
+      <div class='menu-sort-item rubik-17 text-color-secondary mt-3' data-sort='asc'>Ascending</div>
+      <div class='menu-sort-item rubik-17 text-color-secondary mt-3' data-sort='desc'>Descending</div>
     </div>
 `;
 
@@ -51,6 +48,7 @@ export const SideMenu = async (
     }
   }
 
+  // sort by price logic
   menu.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement;
     const sortItem = target.closest('.menu-sort-item') as HTMLElement | null;
@@ -60,8 +58,8 @@ export const SideMenu = async (
 
       if (sortValue === 'asc' || sortValue === 'desc') {
         const allSortItems = menu.querySelectorAll('.menu-sort-item');
-        allSortItems.forEach((item) => item.classList.remove('active'));
-        sortItem.classList.add('active');
+        allSortItems.forEach((item) => item.classList.remove('fw-600'));
+        sortItem.classList.add('fw-600');
 
         //need to use unknown here to narrow down types smh??
         const sortOrder = sortValue as unknown as SortOrder;
@@ -71,8 +69,8 @@ export const SideMenu = async (
   });
 
   menu.append(
-    Button('Apply Filter', 'menu-sort-button-apply'),
-    Button('Reset Filter', 'menu-sort-button-reset')
+    Button('Apply Filter', 'menu-sort-button-apply rubik-14 fw-500'),
+    Button('Reset Filter', 'menu-sort-button-reset rubik-14 fw-500')
   );
 
   const applyFilterButton = menu.querySelector(

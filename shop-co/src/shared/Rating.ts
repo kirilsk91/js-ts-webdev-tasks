@@ -1,6 +1,6 @@
 export const Rating = (rt: number): HTMLElement => {
   const rating = document.createElement('div');
-  rating.className = 'rating d-flex';
+  rating.className = 'd-flex align-items-center py-3';
 
   const numOfFullStars = Math.floor(rt);
   const shouldAddhalfStar = rt - numOfFullStars >= 0.5;
@@ -21,11 +21,11 @@ export const Rating = (rt: number): HTMLElement => {
   }
 
   const ratingNum = document.createElement('span');
-  ratingNum.className = 'rating-num';
+  ratingNum.className = 'rating-num rubik-17 text-color-primary ms-2';
   ratingNum.innerHTML =
     /*html*/
     `
-  <span class='rt'></span>${rt.toString()}/<span class='rt-full'>5</span>
+    ${rt.toString()}/<span class='text-color-secondary'>5</span>
   `;
   rating.append(ratingNum);
 

@@ -1,8 +1,9 @@
 export const RatingFilter = (): HTMLElement => {
   const ratingFilterWrapper = document.createElement('div');
-  ratingFilterWrapper.className = 'rating-filter-wrap';
+  ratingFilterWrapper.className = 'rating-filter-wrap pt-3';
 
   const title = document.createElement('h5');
+  title.className = 'rubik-17 mb-2';
   title.textContent = 'Rating';
   ratingFilterWrapper.append(title);
 
@@ -13,10 +14,13 @@ export const RatingFilter = (): HTMLElement => {
 
   for (let rating = 1; rating <= 5; rating++) {
     const label = document.createElement('label');
-    label.className = 'brand-list-item d-flex align-items-center';
+    label.className = 'd-flex align-items-center';
+    label.style.marginBottom = '0.2rem';
+    label.style.cursor = 'pointer';
+    label.style.width = 'fit-content';
 
     const checkbox = document.createElement('input');
-    checkbox.className = 'form-check-input rating-checkbox';
+    checkbox.className = 'form-check-input';
     checkbox.type = 'checkbox';
     checkbox.value = rating.toString();
     checkbox.name = 'rating-filter';

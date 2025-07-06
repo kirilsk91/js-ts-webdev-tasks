@@ -5,6 +5,7 @@ import type { ProductsResponse, SortOrder } from '@myTypes/types';
 import { getProducts } from '@services/Categories';
 import { SideMenu } from '@components/Category/SideMenu';
 import { Gallery } from '@components/Category/Gallery';
+import { NotFound } from '@shared/NotFound';
 
 export const initCategoryPage = async (
   dyamicContainer: HTMLElement,
@@ -16,10 +17,8 @@ export const initCategoryPage = async (
   localStorage.removeItem('selectedPriceRange');
 
   const categoryWrapper = document.createElement('div');
-  categoryWrapper.className = 'category-wrapper d-flex justify-content-between';
-  dyamicContainer.append(Breadcrumbs(slug));
-
-  dyamicContainer.append(categoryWrapper);
+  categoryWrapper.className = 'category-wrapper px-100 d-flex flex-wrap';
+  dyamicContainer.append(Breadcrumbs(slug), categoryWrapper);
 
   //move sidemenu out of render function to avoid duplicating
   const sideMenu = await SideMenu(
@@ -69,16 +68,12 @@ export const initCategoryPage = async (
       }
 
       if (storedPriceRange) {
-        try {
-          const parsed = JSON.parse(storedPriceRange) as [number, number];
-          if (Array.isArray(parsed) && parsed.length === 2) {
-            const [minPrice, maxPrice] = parsed;
-            products = products.filter(
-              (p) => p.price >= minPrice && p.price <= maxPrice
-            );
-          }
-        } catch {
-          // Do nothing if parsing fails
+        const parsed = JSON.parse(storedPriceRange) as [number, number];
+        if (parsed && parsed.length === 2) {
+          const [minPrice, maxPrice] = parsed;
+          products = products.filter(
+            (p) => p.price >= minPrice && p.price <= maxPrice
+          );
         }
       }
 
@@ -86,6 +81,8 @@ export const initCategoryPage = async (
       categoryWrapper.append(Gallery({ ...productsResponse, products }, slug));
     } catch (error) {
       console.error('Some error', error);
+      //temp fix to catch 404s
+      categoryWrapper.append(NotFound());
     }
   };
 

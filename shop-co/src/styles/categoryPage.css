@@ -1,17 +1,10 @@
-.category-wrapper {
-  padding: 0 100px;
-}
-
 .side-menu {
-  width: 295px;
-  height: 100%;
   border-radius: 20px;
-  border-width: 1px;
   padding-top: 20px;
   padding-right: 24px;
   padding-bottom: 20px;
   padding-left: 24px;
-  border: 1px solid #0000001a;
+  border: 1px solid var(--color-border);
 }
 
 .side-menu .form-check-input {
@@ -20,65 +13,19 @@
 }
 
 .side-menu .form-check-input:checked {
-  background-color: #6c757d !important;
-  border-color: #6c757d !important;
+  background-color: var(--color-checkbox) !important;
+  border-color: var(--color-checkbox) !important;
 }
 
 .side-menu .form-check-input:focus {
   box-shadow: none !important;
-  border-color: #6c757d !important;
+  border-color: var(--color-checkbox) !important;
   outline: none !important;
 }
 
-.side-menu label {
+/* .side-menu label {
   width: fit-content;
-}
-
-.side-menu h4 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  margin: 0;
-}
-
-.side-menu h5 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  margin-bottom: 0.5rem;
-}
-
-.side-menu span {
-  cursor: pointer;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.3rem;
-  letter-spacing: 0%;
-  color: #00000099;
-  margin: 0;
-}
-
-.side-menu .no-brands {
-  cursor: text;
-}
-
-.filter-slider-wrapper h5 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
+} */
 
 .noUi-handle {
   cursor: pointer !important;
@@ -86,7 +33,7 @@
 }
 
 .noUi-connect {
-  background: #000000 !important;
+  background: var(--color-primary) !important;
 }
 
 .noUi-target,
@@ -96,21 +43,6 @@
   box-shadow: none !important;
 }
 
-.rating-filter-wrap h5 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.rating-stars {
-  margin-bottom: 0.3rem !important;
-}
-
 .rating-stars img {
   width: 1rem !important;
   height: 1rem !important;
@@ -118,32 +50,20 @@
 }
 
 .side-menu img {
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .menu-sort-items {
-  border-top: 1px solid #0000001a;
-  border-bottom: 1px solid #0000001a;
-  padding: 25px 0;
-  margin: 25px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.7rem 0;
+  margin: 1.7rem 0;
 }
 
 .menu-sort-item {
   cursor: pointer;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: #00000099;
-  margin-top: 15px;
-}
-
-.menu-sort-item.active {
-  font-weight: 600;
-  font-size: 17px;
+  width: fit-content;
 }
 
 .menu-sort-button-apply {
@@ -151,9 +71,9 @@
   height: 48px;
   border-radius: 62px;
   gap: 12px;
-  background-color: #000000;
-  color: white;
-  margin-bottom: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  margin-bottom: 1rem;
 }
 
 .menu-sort-button-reset {
@@ -161,152 +81,29 @@
   height: 48px;
   border-radius: 62px;
   gap: 12px;
-  background-color: #f2f0f1;
-  color: black;
-}
-
-.gallery-wrapper {
-  margin-left: 2rem;
-}
-
-.gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  /* border: 1px solid red; */
-}
-
-.gallery-title {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 100%;
-  color: #000;
+  background-color: var(--color-card-bg);
+  color: var(--color-primary);
 }
 
 .gallery-title::first-letter {
   text-transform: uppercase;
 }
 
-.no-gallery-items {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.no-gallery-items h3 {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  margin-top: 25px;
-}
-
-.gallery-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
-  gap: 24px;
-}
-
 .gallery-item {
-  width: 100%;
   border-radius: 20px;
-  border: 1px solid #0000001a;
+  border: 1px solid var(--color-border);
   overflow: hidden;
   padding: 0 20px;
 }
 
 .gallery-item:hover {
-  background-color: #f3f3f3;
+  background-color: var(--color-item-card-bg-hover);
   cursor: pointer;
 }
 
 .gallery-item-thumbnail {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #0000001a;
+  border-bottom: 1px solid var(--color-border);
   width: 100%;
-}
-
-.gallery-item div {
-  margin-bottom: 15px;
-}
-
-.gallery-item-title {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-}
-
-.gallery-item-price {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  margin-right: 7px;
-}
-
-.gallery-item-price.old {
-  color: #00000066;
-  text-decoration: line-through;
-}
-
-.rating {
-  align-items: center;
-}
-
-.rating img {
-  margin-right: 4px;
-}
-
-.rating-num {
-  margin-left: 10px;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: #000000;
-}
-
-.rating-num span {
-  color: #00000099;
-}
-
-.discount {
-  align-items: center;
-  display: flex;
-  color: #ff3333;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  height: 30px;
-  border-radius: 62px;
-  gap: 12px;
-  padding-top: 6px;
-  padding-right: 14px;
-  padding-bottom: 6px;
-  padding-left: 14px;
-  background-color: #ff33331a;
-}
-
-.price-container {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  max-width: 100%;
-  overflow-wrap: break-word;
 }
 
 .loading-indicator {
