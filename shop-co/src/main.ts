@@ -13,6 +13,7 @@ import { NotFound } from '@shared/NotFound';
 import { initCategoryPage } from './pages/Category';
 import type { CategoryRoute, ProductRoute } from '@myTypes/types';
 import { initProductPage } from './pages/Products';
+import { initCartPage } from './pages/Cart';
 
 const router = new Navigo('/', { hash: true });
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -39,6 +40,10 @@ router
     '/product/:productId': ({ data }: ProductRoute) => {
       contentContainer.innerHTML = '';
       initProductPage(contentContainer, data?.productId);
+    },
+    '/cart': () => {
+      contentContainer.innerHTML = '';
+      initCartPage(contentContainer);
     },
   })
   .notFound(() => {

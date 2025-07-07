@@ -1,6 +1,6 @@
 export const ProductGeneralInfo = (
   descr: string,
-  brand: string,
+  brand: string = 'N/A',
   stock: number,
   availabilityStatus: string
 ): HTMLElement => {

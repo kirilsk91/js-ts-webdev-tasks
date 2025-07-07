@@ -2,7 +2,7 @@ import { Button } from '@shared/Button';
 
 export const ProductButtonGroup = (
   onAddToCart: (quantity: number) => void,
-  defaultQuantity = 0
+  defaultQuantity = 1
 ): HTMLElement => {
   let quantity: number = defaultQuantity;
 

@@ -4,6 +4,7 @@ import { Rating } from '@shared/Rating';
 import { ProductGeneralInfo } from './ProductGeneralInfo';
 import { ProductButtonGroup } from './ProductButtonGroup';
 import { updateCartUI } from '@utils/updateCartUI';
+import { fire } from '@utils/sweetalert';
 // import { addToCart, GetCart } from '@services/Cart';
 
 export const ProductInfo = (product: Product): HTMLElement => {
@@ -22,7 +23,7 @@ export const ProductInfo = (product: Product): HTMLElement => {
   const storedCart: Array<{ product: StoredProduct; quantity: number }> =
     JSON.parse(localStorage.getItem('cart-items') || '[]');
 
-  const initialQuantity = 0;
+  const initialQuantity = 1;
 
   const productInfoWrap = document.createElement('div');
   productInfoWrap.className = 'product-info-wrap col-6 ps-4';
@@ -69,6 +70,11 @@ export const ProductInfo = (product: Product): HTMLElement => {
     //   .catch((err) => console.error(err));
 
     localStorage.setItem('cart-items', JSON.stringify(storedCart));
+    fire({
+      title: 'Product has been added!',
+      text: 'You can now view it in your cart.',
+      icon: 'success',
+    });
     updateCartUI();
   };
 

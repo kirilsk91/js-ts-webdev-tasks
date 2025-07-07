@@ -204,3 +204,11 @@
 #cart-badge {
   background-color: rgb(251, 234, 236) !important;
 }
+
+button.disabled,
+button:disabled {
+  pointer-events: none;
+  opacity: 0.65;
+  box-shadow: none;
+  user-select: none;
+}

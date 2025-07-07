@@ -18,7 +18,19 @@ export const initCategoryPage = async (
 
   const categoryWrapper = document.createElement('div');
   categoryWrapper.className = 'px-100 d-flex flex-wrap';
-  dyamicContainer.append(Breadcrumbs(slug), categoryWrapper);
+  dyamicContainer.append(
+    Breadcrumbs([
+      {
+        label: 'Home',
+        href: '/',
+      },
+      {
+        label: slug,
+        href: `/category/${slug}`,
+      },
+    ]),
+    categoryWrapper
+  );
 
   //move sidemenu out of render function to avoid duplicating
   const sideMenu = await SideMenu(

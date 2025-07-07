@@ -21,7 +21,20 @@ export const initProductPage = async (
       ProductInfo(productResponse)
     );
     dyamicContainer.append(
-      Breadcrumbs(productResponse.category, productResponse.title)
+      Breadcrumbs([
+        {
+          label: 'Home',
+          href: '/',
+        },
+        {
+          label: productResponse.category,
+          href: `/category/${productResponse.category}`,
+        },
+        {
+          label: productResponse.title,
+          href: '',
+        },
+      ])
     );
     dyamicContainer.append(productWrapper);
   } catch (error) {}

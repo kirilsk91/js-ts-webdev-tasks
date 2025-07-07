@@ -7,7 +7,7 @@ export const Button = (
   button.className = btnClass;
 
   if (typeof buttonContent === 'string') {
-    button.innerText = buttonContent;
+    button.innerHTML = buttonContent;
   } else {
     const img = document.createElement('img');
     img.src = buttonContent.src;

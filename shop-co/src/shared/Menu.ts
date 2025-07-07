@@ -12,7 +12,9 @@ export const Menu = (): HTMLElement => {
       </a>
     </div>
     <div class="position-relative">
-      <img src="/assets/cart.svg" alt="cart"/>
+      <a href='/cart'>
+        <img src="/assets/cart.svg" alt="cart"/>
+      </a>
       <img src="/assets/profile.svg" alt="profile"/>
       <span id="cart-badge" class="position-absolute start-50 rubik-14 fw-500 translate-middle badge rounded-pill text-danger" style="display:none;">
         0

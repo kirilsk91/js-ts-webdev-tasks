@@ -110,3 +110,16 @@ export type CartAddResponse = {
   userId: number;
   products: Product[];
 };
+
+export type BreadcrumbItem = {
+  label: string;
+  href: string;
+};
+
+export type SweetAlert = {
+  title?: string;
+  text?: string;
+  icon?: 'success' | 'error' | 'warning' | 'info' | 'question';
+  timer?: number;
+  showConfirmButton?: boolean;
+};

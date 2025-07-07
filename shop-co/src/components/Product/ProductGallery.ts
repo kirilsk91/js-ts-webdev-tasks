@@ -27,7 +27,7 @@ export const ProductGallery = (product: Product): HTMLElement => {
       galleryPicContainer.innerHTML =
         /*html*/
         `
-      <img class='img-fluid' src='${clickedImageSrc}' alt='Selected product image' />
+      <img class='img-fluid' src="${clickedImageSrc}" alt='Selected product image' />
       `;
 
       galleryItemContainer.querySelectorAll('img').forEach((img) => {
@@ -49,7 +49,7 @@ export const ProductGallery = (product: Product): HTMLElement => {
   galleryPicContainer.innerHTML =
     /*html*/
     `
-  <img class='img-fluid' src='${images[0]}'/>
+  <img class='img-fluid' src="${images[0]}"/>
   `;
 
   return productGallery;
