@@ -1,8 +1,75 @@
-/* .product-wrapper {
-  border: 1px solid red;
-} */
+.product-wrapper {
+  /* cant wrap my head around how not to use harcoded heights... */
+  max-height: 520px;
+}
+
+.product-gallery-items {
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.product-gallery-item {
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-right: 24px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  border: 1px solid var(--color-border);
+}
+
+.product-gallery-pic {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-right: 24px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  border: 1px solid var(--color-border);
+}
+
+.product-gallery-pic img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 .product-brand-wrap {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+}
+
+.btn-group-wrap {
+  border-top: 1px solid var(--color-border);
+}
+
+.quantity-btn {
+  width: 100%;
+  border-radius: 0;
+  background-color: var(--color-card-bg);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:first-child {
+  border-top-left-radius: 62px;
+  border-bottom-left-radius: 62px;
+}
+
+.quantity-btn:last-child {
+  border-top-right-radius: 62px;
+  border-bottom-right-radius: 62px;
+}
+
+.quantity-btn:disabled {
+  cursor: default;
+}
+
+.quantity-btn:disabled:active {
+  background-color: var(--color-card-bg) !important;
 }

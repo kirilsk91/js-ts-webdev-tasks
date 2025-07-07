@@ -1,11 +1,20 @@
 export const Button = (
-  buttonText: string,
+  buttonContent: string | { src: string; alt: string },
   btnClass: string,
   scrollAction: boolean = false
 ): HTMLElement => {
   const button = document.createElement('button');
   button.className = btnClass;
-  button.innerText = buttonText;
+
+  if (typeof buttonContent === 'string') {
+    button.innerText = buttonContent;
+  } else {
+    const img = document.createElement('img');
+    img.src = buttonContent.src;
+    img.alt = buttonContent.alt ?? '';
+    img.style.pointerEvents = 'none';
+    button.append(img);
+  }
 
   if (scrollAction) {
     button.addEventListener('click', (): void => {

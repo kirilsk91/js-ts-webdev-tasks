@@ -2,6 +2,7 @@ import type { Product } from '@myTypes/types';
 import { Price } from '@shared/Price';
 import { Rating } from '@shared/Rating';
 import { ProductGeneralInfo } from './ProductGeneralInfo';
+import { ProductButtonGroup } from './ProductButtonGroup';
 
 export const ProductInfo = (product: Product): HTMLElement => {
   const {
@@ -16,12 +17,12 @@ export const ProductInfo = (product: Product): HTMLElement => {
   } = product;
 
   const productInfoWrap = document.createElement('div');
-  productInfoWrap.className = 'product-info-wrap col-6';
+  productInfoWrap.className = 'product-info-wrap col-6 ps-4';
 
   productInfoWrap.innerHTML =
     /*html*/
     `
-  <div class='product-info'>
+  <div class='product-info d-flex h-100 justify-content-between flex-column'>
     <div class='poppins-40'>${title}</div>
   </div>
   `;
@@ -30,7 +31,8 @@ export const ProductInfo = (product: Product): HTMLElement => {
   productInfo?.append(
     Rating(rating),
     Price(price, discountPercentage),
-    ProductGeneralInfo(description, brand, stock, availabilityStatus)
+    ProductGeneralInfo(description, brand, stock, availabilityStatus),
+    ProductButtonGroup(stock)
   );
 
   return productInfoWrap;
