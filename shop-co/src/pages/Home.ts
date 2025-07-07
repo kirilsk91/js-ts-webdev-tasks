@@ -19,7 +19,7 @@ export const initHomePage = async (
     );
   } catch (error) {
     console.error('Some error', error);
-    //add placeholder
+    //add placeholder??
     dyamicContainer.innerHTML = '<p>Failed to load content.</p>';
   }
 };

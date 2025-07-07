@@ -47,6 +47,14 @@ type Meta = {
   qrCode: string;
 };
 
+export type StoredProduct = {
+  id: number;
+  title: string;
+  price: number;
+  discountPercentage: number;
+  thumbnail: string;
+};
+
 export type Product = {
   id: number;
   title: string;
@@ -93,4 +101,12 @@ export type BrandsResponse = {
   total: number;
   skip: number;
   limit: number;
+};
+
+export type CartAddResponse = {
+  total: number;
+  totalProducts: number;
+  totalQuantity: number;
+  userId: number;
+  products: Product[];
 };

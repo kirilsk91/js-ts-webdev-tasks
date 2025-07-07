@@ -24,6 +24,5 @@ export const initProductPage = async (
       Breadcrumbs(productResponse.category, productResponse.title)
     );
     dyamicContainer.append(productWrapper);
-    console.log(productResponse);
   } catch (error) {}
 };

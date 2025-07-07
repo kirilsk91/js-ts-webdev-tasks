@@ -200,3 +200,7 @@
   background-color: currentColor;
   transform: translateY(-50%);
 }
+
+#cart-badge {
+  background-color: rgb(251, 234, 236) !important;
+}

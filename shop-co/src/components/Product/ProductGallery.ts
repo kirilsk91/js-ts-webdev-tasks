@@ -10,7 +10,7 @@ export const ProductGallery = (product: Product): HTMLElement => {
     /*html*/
     `
     <div class='d-flex gap-3'>
-      <div class='product-gallery-items col-3 px-0'>
+      <div class='product-gallery-items col px-0'>
       </div>
       <div class='product-gallery-pic col-9'></div>
     </div>
@@ -20,19 +20,23 @@ export const ProductGallery = (product: Product): HTMLElement => {
     '.product-gallery-items'
   ) as HTMLElement;
 
-  // galleryItemContainer.addEventListener('click', (event: MouseEvent) => {
-  //   const target = event.target as HTMLElement;
-  //   if (target && target.tagName === 'IMG') {
-  //     const clickedImageSrc = (target as HTMLImageElement).src;
-  //     galleryPicContainer.innerHTML = `<img src='${clickedImageSrc}' alt='Selected product image' />`;
+  galleryItemContainer.addEventListener('click', (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (target && target.tagName === 'IMG') {
+      const clickedImageSrc = (target as HTMLImageElement).src;
+      galleryPicContainer.innerHTML =
+        /*html*/
+        `
+      <img class='img-fluid' src='${clickedImageSrc}' alt='Selected product image' />
+      `;
 
-  //     galleryItemContainer.querySelectorAll('img').forEach((img) => {
-  //       img.classList.remove('active');
-  //     });
+      galleryItemContainer.querySelectorAll('img').forEach((img) => {
+        img.classList.remove('active');
+      });
 
-  //     target.classList.add('active');
-  //   }
-  // });
+      target.classList.add('active');
+    }
+  });
 
   images.forEach((image: string) => {
     galleryItemContainer?.append(ProductGalleryItem(image));
@@ -42,7 +46,11 @@ export const ProductGallery = (product: Product): HTMLElement => {
     '.product-gallery-pic'
   ) as HTMLElement;
 
-  galleryPicContainer.innerHTML = `<img class='img-fluid' src='${images[0]}'/>`;
+  galleryPicContainer.innerHTML =
+    /*html*/
+    `
+  <img class='img-fluid' src='${images[0]}'/>
+  `;
 
   return productGallery;
 };
