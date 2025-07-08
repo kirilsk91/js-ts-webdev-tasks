@@ -38,7 +38,7 @@ export const Gallery = (
 
     if (galleryItem && galleryItem.dataset.productId) {
       const pId = galleryItem.dataset.productId;
-      window.location.hash = `/product/${pId}`;
+      window.location.href = `/product/${pId}`;
     }
   });
 

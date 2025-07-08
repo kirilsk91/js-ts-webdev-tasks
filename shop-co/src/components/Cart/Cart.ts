@@ -7,14 +7,13 @@ import { EmptyCart } from './EmptyCart';
 
 export const Cart = (): HTMLElement => {
   const cart = document.createElement('div');
-  cart.className = '';
   cart.innerHTML =
     /*html*/
     `
   <div class="cart-wrapper px-100 ">
     <div class='d-flex'>
       <div class="col cart-items me-4"></div>
-      <div class="col-5 cart-order-summary"></div>
+      <div class="col-5 order-summary"></div>
     </div>
   </div>
   `;
@@ -53,9 +52,11 @@ export const Cart = (): HTMLElement => {
 
       updateCartUI();
 
-      const summaryContainer = cart.querySelector('.cart-order-summary');
+      const summaryContainer = cart.querySelector('.order-summary');
       summaryContainer!.innerHTML = '';
-      summaryContainer!.append(OrderSummary(updatedCartItems));
+      summaryContainer!.append(
+        OrderSummary(updatedCartItems, '/checkout', 'Proceed to Checkout')
+      );
 
       if (updatedCartItems.length === 0 && cartItemList) {
         EmptyCart(cartItemList);
@@ -67,7 +68,9 @@ export const Cart = (): HTMLElement => {
     EmptyCart(cartItemList);
   }
 
-  const cartOrderSummary = cart.querySelector('.cart-order-summary');
-  cartOrderSummary?.append(OrderSummary(storedItems));
+  const cartOrderSummary = cart.querySelector('.order-summary');
+  cartOrderSummary?.append(
+    OrderSummary(storedItems, '/checkout', 'Proceed to Checkout')
+  );
   return cart;
 };

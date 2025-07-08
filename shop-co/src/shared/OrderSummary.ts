@@ -5,7 +5,9 @@ export const OrderSummary = (
   storedItems: {
     product: StoredProduct;
     quantity: number;
-  }[]
+  }[],
+  navigationUrl: string,
+  buttonText: string
 ): HTMLElement => {
   let totalSum = 0;
   let totalDiscount = 0;
@@ -26,8 +28,7 @@ export const OrderSummary = (
     discountedSum += itemFinal;
   });
   const totalDiscountPercentage = (totalDiscount / totalSum) * 100;
-  summary.className =
-    'order-summary d-flex h-100 flex-column justify-content-between';
+  summary.className = 'd-flex h-100 flex-column justify-content-between';
   summary.innerHTML =
     /*html*/
     `
@@ -49,8 +50,10 @@ export const OrderSummary = (
   `;
 
   const checkoutButton = Button(
-    'Proceed to Checkout',
-    'default-button text-color-white w-100 rubik-17 fw-500 d-flex align-items-center justify-content-center'
+    buttonText,
+    'default-button text-color-white w-100 rubik-17 fw-500 d-flex align-items-center justify-content-center',
+    false,
+    navigationUrl
   );
 
   const btnImg = document.createElement('img');

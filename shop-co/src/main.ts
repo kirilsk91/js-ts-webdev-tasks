@@ -2,9 +2,7 @@ import './style.css';
 import '@shared/shared.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 import { Promo } from '@shared/Promo';
-
 import { initHomePage } from './pages/Home';
 import { Menu } from '@shared/Menu';
 import { Footer } from '@shared/Footer';
@@ -14,6 +12,7 @@ import { initCategoryPage } from './pages/Category';
 import type { CategoryRoute, ProductRoute } from '@myTypes/types';
 import { initProductPage } from './pages/Products';
 import { initCartPage } from './pages/Cart';
+import { initCheckOutPage } from './pages/Checkout';
 
 const router = new Navigo('/', { hash: true });
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -44,6 +43,10 @@ router
     '/cart': () => {
       contentContainer.innerHTML = '';
       initCartPage(contentContainer);
+    },
+    '/checkout': () => {
+      contentContainer.innerHTML = '';
+      initCheckOutPage(contentContainer);
     },
   })
   .notFound(() => {

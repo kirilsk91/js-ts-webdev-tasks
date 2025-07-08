@@ -123,3 +123,13 @@ export type SweetAlert = {
   timer?: number;
   showConfirmButton?: boolean;
 };
+
+export type FormInput = {
+  id: string;
+  type: string;
+  required: boolean;
+  minLength?: number;
+  maxLength?: number;
+  pattern?: string;
+  placeholder?: string;
+};

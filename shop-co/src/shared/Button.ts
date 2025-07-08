@@ -1,7 +1,8 @@
 export const Button = (
   buttonContent: string | { src: string; alt: string },
   btnClass: string,
-  scrollAction: boolean = false
+  scrollAction: boolean = false,
+  navigationUrl?: string
 ): HTMLElement => {
   const button = document.createElement('button');
   button.className = btnClass;
@@ -16,14 +17,16 @@ export const Button = (
     button.append(img);
   }
 
-  if (scrollAction) {
-    button.addEventListener('click', (): void => {
+  button.addEventListener('click', (): void => {
+    if (navigationUrl) {
+      window.location.href = navigationUrl;
+    } else if (scrollAction) {
       const destination = document.getElementById('categories');
       if (destination) {
         destination.scrollIntoView({ behavior: 'smooth' });
       }
-    });
-  }
+    }
+  });
 
   return button;
 };

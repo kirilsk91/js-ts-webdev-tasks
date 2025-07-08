@@ -14,7 +14,7 @@ button:active {
 input:focus {
   outline: none !important;
   box-shadow: none !important;
-  border-color: var(--color-border) !important;
+  border-color: var(--color-card-bg) !important;
 }
 
 input {
@@ -53,6 +53,8 @@ input {
   --color-light-grey: #b9b9b9;
 
   --color-checkbox: #6c757d;
+
+  --color-validation-error: #dc35467e;
 }
 /* COLORS */
 

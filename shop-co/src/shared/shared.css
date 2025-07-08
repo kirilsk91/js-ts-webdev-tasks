@@ -213,7 +213,7 @@ button:disabled {
   user-select: none;
 }
 
-.cart-order-summary {
+.order-summary {
   border: 1px solid var(--color-border);
   border-radius: 20px;
   padding-top: 20px;
