@@ -1,6 +1,6 @@
 import type { StoredProduct } from '@myTypes/types';
 import { CartItem } from './CartItem';
-import { OrderSummary } from './OrderSummary';
+import { OrderSummary } from '@shared/OrderSummary';
 import { updateCartUI } from '@utils/updateCartUI';
 import { fire } from '@utils/sweetalert';
 import { EmptyCart } from './EmptyCart';

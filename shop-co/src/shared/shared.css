@@ -212,3 +212,17 @@ button:disabled {
   box-shadow: none;
   user-select: none;
 }
+
+.cart-order-summary {
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-right: 24px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  height: 300px;
+}
+
+.summary-total {
+  border-top: 1px solid var(--color-border);
+}

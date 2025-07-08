@@ -3,6 +3,7 @@
   border-radius: 20px;
   padding-right: 24px;
   padding-left: 24px;
+  height: fit-content;
 }
 
 .cart-item {
@@ -12,20 +13,6 @@
 
 .cart-item:last-of-type {
   border-bottom: none;
-}
-
-.cart-order-summary {
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  padding-top: 20px;
-  padding-right: 24px;
-  padding-bottom: 20px;
-  padding-left: 24px;
-  min-height: 300px;
-}
-
-.summary-total {
-  border-top: 1px solid var(--color-border);
 }
 
 .trash-cart {
