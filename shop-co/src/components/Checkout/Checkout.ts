@@ -18,12 +18,30 @@ export const Checkout = (): HTMLElement => {
   </div>
   `;
 
-  const checkoutForm = checkout.querySelector('.checkout-form');
-  checkoutForm?.append(CheckoutForm());
+  const checkoutFormWrapper = checkout.querySelector('.checkout-form');
+  const orderSummaryWrapper = checkout.querySelector('.order-summary');
 
-  const cartOrderSummary = checkout.querySelector('.order-summary');
-  cartOrderSummary?.append(
+  const formElement = CheckoutForm();
+  checkoutFormWrapper?.append(formElement);
+
+  orderSummaryWrapper?.append(
     OrderSummary(storedItems, '/checkout', 'Go to Payment')
   );
+
+  const checkoutButton = orderSummaryWrapper?.querySelector('button');
+  const form = formElement as HTMLFormElement;
+
+  const validateForm = () => {
+    if (form.checkValidity()) {
+      checkoutButton?.classList.remove('disabled');
+    } else {
+      checkoutButton?.classList.add('disabled');
+    }
+  };
+
+  form.addEventListener('input', validateForm);
+  form.addEventListener('change', validateForm);
+
+  validateForm();
   return checkout;
 };

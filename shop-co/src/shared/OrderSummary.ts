@@ -65,7 +65,6 @@ export const OrderSummary = (
     const discountPpc = summary.querySelector('.discount-ppc');
     discountPpc?.classList.add('d-none');
     checkoutButton.classList.add('disabled');
-    checkoutButton.setAttribute('disabled', 'true');
   }
   summary.append(checkoutButton);
   return summary;

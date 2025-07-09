@@ -14,30 +14,5 @@ export const createFormInput = (formInput: FormInput): HTMLElement => {
   if (minLength) input.minLength = minLength;
   if (maxLength) input.maxLength = maxLength;
 
-  // DELEGATE
-  input.addEventListener('focus', () => {
-    if (!input.validity.valid) {
-      input.classList.add('error');
-    } else {
-      input.classList.remove('error');
-    }
-  });
-
-  input.addEventListener('input', () => {
-    if (input.validity.valid) {
-      input.classList.remove('error');
-    } else {
-      input.classList.add('error');
-    }
-  });
-
-  input.addEventListener('change', () => {
-    if (input.validity.valid) {
-      input.classList.remove('error');
-    } else {
-      input.classList.add('error');
-    }
-  });
-
   return input;
 };
