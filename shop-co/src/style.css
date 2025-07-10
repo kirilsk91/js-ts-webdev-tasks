@@ -34,6 +34,16 @@ input {
 .mx-100 {
   margin: 0 6rem !important;
 }
+
+@media (max-width: 576px) {
+  .px-100 {
+    padding: 0 1rem !important;
+  }
+
+  .mx-100 {
+    margin: 0 1rem !important;
+  }
+}
 /* C */
 
 /* COLORS */
@@ -46,6 +56,8 @@ input {
   --color-card-bg: #f0f0f0;
   --color-card-bg-hover: #cccccc;
   --color-item-card-bg-hover: #f3f3f3;
+
+  --color-cta-bg: #f2f0f1;
 
   --color-text-primary: #000000;
   --color-text-secondary: #00000099;

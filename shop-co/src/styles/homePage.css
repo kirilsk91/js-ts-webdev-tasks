@@ -15,16 +15,16 @@
   position: absolute;
   width: 150px;
   height: 150px;
-  top: 5px;
-  right: 120px;
+  top: 3%;
+  right: 8%;
 }
 
 .cta-wrapper img.cta-star2 {
   position: absolute;
   width: 100px;
   height: 100px;
-  top: 230px;
-  left: 950px;
+  top: 20%;
+  right: 43%;
 }
 
 .cta-text-overlay {
@@ -82,4 +82,79 @@
 .cat-list-item:hover {
   background-color: var(--color-card-bg-hover);
   cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .brand-showcase {
+    justify-content: center;
+    row-gap: 1.5rem;
+  }
+
+  .brand-showcase img {
+    width: 30%;
+  }
+
+  .cta-wrapper {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-text-overlay {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 2rem 1rem;
+    height: auto;
+    background-color: var(--color-cta-bg);
+  }
+
+  .cta-wrapper img.cta-bg {
+    order: 2;
+    object-fit: cover;
+    object-position: right center;
+    height: 500px;
+  }
+
+  .cta-stats-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .cta-stats-wrapper .cta-stat-item {
+    padding: 0;
+  }
+
+  .cta-stat-item {
+    flex: 1 1 40%;
+    min-width: 150px;
+    max-width: 220px;
+    padding: 0;
+    border: none;
+    text-align: center;
+    border: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .cta-wrapper img.cta-star1 {
+    bottom: 30%;
+    z-index: 100;
+    top: auto;
+  }
+
+  .cta-wrapper img.cta-star2 {
+    left: 5%;
+    top: auto;
+    bottom: 21%;
+    z-index: 100;
+  }
+
+  .cta-text-overlay .default-button {
+    width: 100% !important;
+  }
 }

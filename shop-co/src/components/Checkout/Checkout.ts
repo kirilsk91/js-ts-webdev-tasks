@@ -7,15 +7,14 @@ export const Checkout = (): HTMLElement => {
     JSON.parse(localStorage.getItem('cart-items') || '[]');
 
   const checkout = document.createElement('div');
+  checkout.className = 'checkout-wrapper px-100';
   checkout.innerHTML =
     /*html*/
     `
-  <div class="checkout-wrapper px-100 ">
-    <div class='d-flex'>
-      <div class="col checkout-form me-4"></div>
-      <div class="col-5 order-summary"></div>
+    <div class='d-flex flex-column flex-lg-row'>
+      <div class="col-12 col-lg checkout-form me-lg-4 mb-4 mb-lg-0"></div>
+      <div class="col-12 col-lg-5 order-summary"></div>
     </div>
-  </div>
   `;
 
   const checkoutFormWrapper = checkout.querySelector('.checkout-form');

@@ -7,8 +7,7 @@ export const CtaTextOverlay = (): HTMLElement => {
   ctaText.innerHTML =
     /*html*/
     `
-    <span class='poppins-64 fw-800'>
-    FIND <span 
+    <span class='poppins-64 fw-800'>FIND <span 
     style='text-decoration: underline;text-decoration-thickness: 3px'>ANYTHING
     </span><br/>
     THAT MATCHES<br/>

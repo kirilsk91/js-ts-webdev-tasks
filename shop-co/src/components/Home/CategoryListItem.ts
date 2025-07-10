@@ -1,6 +1,6 @@
 export const CategoryListItem = (item: string, slug: string): HTMLElement => {
   const catListItemWrap = document.createElement('div');
-  catListItemWrap.className = 'col-12 col-sm-6 col-lg-3';
+  catListItemWrap.className = 'col-6 col-lg-3';
 
   const catListItem = document.createElement('div');
   catListItem.className = 'cat-list-item d-flex align-items-center';

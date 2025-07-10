@@ -7,15 +7,14 @@ import { EmptyCart } from './EmptyCart';
 
 export const Cart = (): HTMLElement => {
   const cart = document.createElement('div');
+  cart.className = 'cart-wrapper px-100';
   cart.innerHTML =
     /*html*/
     `
-  <div class="cart-wrapper px-100 ">
-    <div class='d-flex'>
-      <div class="col cart-items me-4"></div>
-      <div class="col-5 order-summary"></div>
+    <div class='d-flex flex-column flex-lg-row'>
+      <div class="col-12 col-lg cart-items me-lg-4 mb-4 mb-lg-0"></div>
+      <div class="col-12 col-lg-5 order-summary"></div>
     </div>
-  </div>
   `;
 
   const storedItems: Array<{ product: StoredProduct; quantity: number }> =

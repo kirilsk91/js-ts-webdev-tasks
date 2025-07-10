@@ -1,7 +1,7 @@
 export const BrandShowcase = (): HTMLElement => {
   const showcase = document.createElement('div');
   showcase.className =
-    'brand-showcase col-12 d-flex align-items-center justify-content-around py-5 mb-3';
+    'brand-showcase col-12 d-flex flex-wrap align-items-center justify-content-around py-sm-3 py-5  mb-3';
   showcase.innerHTML =
     /*html*/
     `
