@@ -6,7 +6,7 @@ import type {
   ProductsResponse,
   SortOrder,
 } from '@myTypes/types';
-import { fire } from '@utils/sweetalert';
+import { handleError } from '@utils/handleError';
 
 const API_BASE_URL = 'https://dummyjson.com';
 
@@ -17,22 +17,7 @@ export const getCategories = async (): Promise<Category[]> => {
     );
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      fire({
-        title: 'Request failed',
-        text: error.message,
-        icon: 'error',
-      });
-      console.error('Some error:', error);
-    } else {
-      fire({
-        title: 'Unexpected error',
-        text: (error as Error).message,
-        icon: 'error',
-      });
-      console.error('Some error:', error);
-    }
-    throw error;
+    handleError(error);
   }
 };
 
@@ -47,23 +32,7 @@ export const getProducts = async (
     const response = await axios.get<ProductsResponse>(endpoint);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      fire({
-        title: 'Request failed',
-        text: error.message,
-        icon: 'error',
-      });
-      console.error('Some error:', error);
-    } else {
-      fire({
-        title: 'Unexpected error',
-        text: (error as Error).message,
-        icon: 'error',
-      });
-      console.error('Some error:', error);
-    }
-
-    throw error;
+    handleError(error);
   }
 };
 
@@ -76,21 +45,6 @@ export const getProductBrands = async (
     const response = await axios.get(endpoint);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      fire({
-        title: 'Request failed',
-        text: error.message,
-        icon: 'error',
-      });
-      console.error('Some error:', error);
-    } else {
-      fire({
-        title: 'Unexpected error',
-        text: (error as Error).message,
-        icon: 'error',
-      });
-      console.error('Some error:', error);
-    }
-    throw error;
+    handleError(error);
   }
 };

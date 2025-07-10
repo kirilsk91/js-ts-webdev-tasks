@@ -137,6 +137,10 @@
   background-color: var(--color-white);
 }
 
+.footer-float .error {
+  border: 3px solid var(--color-validation-error);
+}
+
 .float-input {
   margin-bottom: 10px;
   width: 349px;

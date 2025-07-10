@@ -31,11 +31,16 @@ export const Cart = (): HTMLElement => {
 
     if (target.classList.contains('trash-cart')) {
       const productId = target.dataset.id;
-
       if (!productId) return;
 
+      //get actual cart from storage
+      const currentlyStoredItems: Array<{
+        product: StoredProduct;
+        quantity: number;
+      }> = JSON.parse(localStorage.getItem('cart-items') || '[]');
+
       const idToTrash = parseInt(productId);
-      const updatedCartItems = storedItems.filter(
+      const updatedCartItems = currentlyStoredItems.filter(
         (item) => item.product.id !== idToTrash
       );
 
