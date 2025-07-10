@@ -1,3 +1,5 @@
+import { updateCartUI } from '@utils/updateCartUI';
+
 export const Confirmation = (): HTMLElement => {
   const confirmationWrap = document.createElement('div');
   confirmationWrap.className =
@@ -20,6 +22,10 @@ export const Confirmation = (): HTMLElement => {
       </span>
     </p>
   `;
+
+  localStorage.removeItem('cart-items');
+
+  updateCartUI();
 
   const countDownEl = confirmationWrap.querySelector(
     '.redirect-timer'
