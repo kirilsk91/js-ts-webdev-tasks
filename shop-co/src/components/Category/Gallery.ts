@@ -1,4 +1,5 @@
 import type { Product, ProductsResponse } from '@myTypes/types';
+
 import { GalleryItem } from './GalleryItem';
 
 export const Gallery = (

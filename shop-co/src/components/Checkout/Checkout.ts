@@ -1,6 +1,7 @@
 import { OrderSummary } from '@shared/OrderSummary';
-import { CheckoutForm } from './CheckoutForm';
 import type { StoredProduct } from '@myTypes/types';
+
+import { CheckoutForm } from './CheckoutForm';
 
 export const Checkout = (): HTMLElement => {
   const storedItems: Array<{ product: StoredProduct; quantity: number }> =

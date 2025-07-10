@@ -1,10 +1,11 @@
 import type { Product, StoredProduct } from '@myTypes/types';
 import { Price } from '@shared/Price';
 import { Rating } from '@shared/Rating';
-import { ProductGeneralInfo } from './ProductGeneralInfo';
-import { ProductButtonGroup } from './ProductButtonGroup';
 import { updateCartUI } from '@utils/updateCartUI';
 import { fire } from '@utils/sweetalert';
+
+import { ProductGeneralInfo } from './ProductGeneralInfo';
+import { ProductButtonGroup } from './ProductButtonGroup';
 // import { addToCart, GetCart } from '@services/Cart';
 
 export const ProductInfo = (product: Product): HTMLElement => {

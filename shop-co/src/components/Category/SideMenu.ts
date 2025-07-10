@@ -1,10 +1,12 @@
 import type { SortOrder } from '@myTypes/types';
 import { Button } from '@shared/Button';
-import { BrandList } from './BrandList';
 import { getProductBrands } from '@services/Categories';
+import type { API } from 'nouislider';
+import { handleError } from '@utils/handleError';
+
+import { BrandList } from './BrandList';
 import { PriceFilterSlider } from './PriceFilterSlider';
 import { RatingFilter } from './RatingFilter';
-import type { API } from 'nouislider';
 
 //some copy pasted stuff from stack to deal with types
 type SliderHTMLElement = HTMLElement & { noUiSlider: API };
@@ -44,7 +46,7 @@ export const SideMenu = async (
         RatingFilter()
       );
     } catch (error) {
-      throw error;
+      handleError(error);
     }
   }
 

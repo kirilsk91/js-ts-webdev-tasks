@@ -1,4 +1,5 @@
 import type { Product } from '@myTypes/types';
+
 import { ProductGalleryItem } from './ProductGalleryItem';
 
 export const ProductGallery = (product: Product): HTMLElement => {

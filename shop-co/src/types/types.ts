@@ -103,7 +103,7 @@ export type BrandsResponse = {
   limit: number;
 };
 
-export type CartAddResponse = {
+export type CartResponse = {
   total: number;
   totalProducts: number;
   totalQuantity: number;

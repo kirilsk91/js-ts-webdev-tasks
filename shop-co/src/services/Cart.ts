@@ -1,4 +1,4 @@
-import type { CartAddResponse } from '@myTypes/types';
+import type { CartResponse } from '@myTypes/types';
 import axios from 'axios';
 
 const API_BASE_URL = 'https://dummyjson.com';
@@ -11,7 +11,7 @@ interface CartProduct {
 export const addToCart = async (
   userId: number,
   products: CartProduct[]
-): Promise<CartAddResponse> => {
+): Promise<CartResponse> => {
   try {
     const response = await axios.post(
       `${API_BASE_URL}/carts/add`,
@@ -32,7 +32,7 @@ export const addToCart = async (
   }
 };
 
-export const GetCart = async (cartId: string): Promise<any> => {
+export const GetCart = async (cartId: string): Promise<CartResponse> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/carts/${cartId}`);
     return response.data;

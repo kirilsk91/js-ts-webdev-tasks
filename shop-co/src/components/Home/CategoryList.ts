@@ -1,4 +1,5 @@
 import type { Category } from '@myTypes/types';
+
 import { CategoryListItem } from './CategoryListItem';
 
 export const CategoryList = (items: Category[]): DocumentFragment => {

@@ -1,8 +1,9 @@
 import type { StoredProduct } from '@myTypes/types';
-import { CartItem } from './CartItem';
 import { OrderSummary } from '@shared/OrderSummary';
 import { updateCartUI } from '@utils/updateCartUI';
 import { fire } from '@utils/sweetalert';
+
+import { CartItem } from './CartItem';
 import { EmptyCart } from './EmptyCart';
 
 export const Cart = (): HTMLElement => {
