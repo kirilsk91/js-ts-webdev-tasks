@@ -25,7 +25,7 @@ export const Confirmation = (): HTMLElement => {
     '.redirect-timer'
   ) as HTMLElement;
 
-  let countDown = 1005;
+  let countDown = 5;
 
   const interval = setInterval((): void => {
     countDown--;
