@@ -24,7 +24,7 @@ export const Checkout = (): HTMLElement => {
   checkoutFormWrapper?.append(formElement);
 
   orderSummaryWrapper?.append(
-    OrderSummary(storedItems, '/checkout', 'Go to Payment')
+    OrderSummary(storedItems, '/confirmation', 'Go to Payment')
   );
 
   const checkoutButton = orderSummaryWrapper?.querySelector('button');

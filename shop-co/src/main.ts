@@ -13,6 +13,7 @@ import type { CategoryRoute, ProductRoute } from '@myTypes/types';
 import { initProductPage } from './pages/Products';
 import { initCartPage } from './pages/Cart';
 import { initCheckOutPage } from './pages/Checkout';
+import { initConfirmationPage } from './pages/Confirmation';
 
 const router = new Navigo('/', { hash: true });
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -47,6 +48,10 @@ router
     '/checkout': () => {
       contentContainer.innerHTML = '';
       initCheckOutPage(contentContainer);
+    },
+    '/confirmation': () => {
+      contentContainer.innerHTML = '';
+      initConfirmationPage(contentContainer);
     },
   })
   .notFound(() => {

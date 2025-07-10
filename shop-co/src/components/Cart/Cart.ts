@@ -56,10 +56,15 @@ export const Cart = (): HTMLElement => {
 
       updateCartUI();
 
+      //rerender summary
       const summaryContainer = cart.querySelector('.order-summary');
       summaryContainer!.innerHTML = '';
       summaryContainer!.append(
-        OrderSummary(updatedCartItems, '/checkout', 'Proceed to Checkout')
+        OrderSummary(
+          updatedCartItems,
+          '/checkout',
+          'Proceed to Confirmation (Ex-Checkout)'
+        )
       );
 
       if (updatedCartItems.length === 0 && cartItemList) {
@@ -74,7 +79,11 @@ export const Cart = (): HTMLElement => {
 
   const cartOrderSummary = cart.querySelector('.order-summary');
   cartOrderSummary?.append(
-    OrderSummary(storedItems, '/checkout', 'Proceed to Checkout')
+    OrderSummary(
+      storedItems,
+      '/checkout',
+      'Proceed to Confirmation (Ex-Checkout)'
+    )
   );
   return cart;
 };
