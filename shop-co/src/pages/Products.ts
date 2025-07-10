@@ -6,6 +6,7 @@ import type { Product } from '@myTypes/types';
 import { getProduct } from '@services/Product';
 import { ProductGallery } from '@components/Product/ProductGallery';
 import { ProductInfo } from '@components/Product/ProductInfo';
+import { NotFound } from '@shared/NotFound';
 
 export const initProductPage = async (
   dyamicContainer: HTMLElement,
@@ -37,5 +38,8 @@ export const initProductPage = async (
       ])
     );
     dyamicContainer.append(productWrapper);
-  } catch (error) {}
+  } catch (error) {
+    console.error('Some error', error);
+    dyamicContainer.append(NotFound('An error occured while loading product.'));
+  }
 };

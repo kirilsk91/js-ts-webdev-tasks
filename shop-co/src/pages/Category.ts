@@ -89,13 +89,14 @@ export const initCategoryPage = async (
         }
       }
 
-      loadingIndicator.remove();
       categoryWrapper.append(Gallery({ ...productsResponse, products }, slug));
     } catch (error) {
       console.error('Some error', error);
-      //temp fix to catch 404s
-      categoryWrapper.append(NotFound());
+      categoryWrapper.append(
+        NotFound('An error occured while loading category items.')
+      );
     }
+    loadingIndicator.remove();
   };
 
   await renderCategoryContent();

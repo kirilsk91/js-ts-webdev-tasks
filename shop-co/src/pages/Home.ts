@@ -4,6 +4,7 @@ import { CallToAction } from '@components/Home/Cta/CallToAction';
 import { BrandShowcase } from '@components/Home/BrandShowcase';
 import { CategoryList } from '@components/Home/CategoryList';
 import { getCategories } from '@services/Categories';
+import { NotFound } from '@shared/NotFound';
 
 export const initHomePage = async (
   dyamicContainer: HTMLElement
@@ -19,7 +20,8 @@ export const initHomePage = async (
     );
   } catch (error) {
     console.error('Some error', error);
-    //add placeholder??
-    dyamicContainer.innerHTML = '<p>Failed to load content.</p>';
+    dyamicContainer.append(
+      NotFound('An error occured while loading categories.')
+    );
   }
 };
