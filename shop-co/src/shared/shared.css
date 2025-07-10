@@ -305,4 +305,10 @@ button:disabled {
     max-width: 50% !important;
     margin-bottom: 1.5rem;
   }
+
+  .bc-item:last-of-type {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

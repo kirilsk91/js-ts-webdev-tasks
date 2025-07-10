@@ -26,7 +26,8 @@ export const ProductInfo = (product: Product): HTMLElement => {
   const initialQuantity = 1;
 
   const productInfoWrap = document.createElement('div');
-  productInfoWrap.className = 'product-info-wrap col-6 ps-4';
+  productInfoWrap.className =
+    'product-info-wrap col-12 col-sm-6 ps-sm-4product-info-wrap col-12 col-sm-6 ps-sm-4';
 
   productInfoWrap.innerHTML =
     /*html*/
