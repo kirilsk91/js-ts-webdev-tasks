@@ -12,9 +12,7 @@ export const Menu = (): HTMLElement => {
       </a>
     </div>
     <div class="position-relative">
-      <a href='/cart'>
-        <img src="/assets/cart.svg" alt="cart"/>
-      </a>
+      <img id='cartIcon' src="/assets/cart.svg" alt="cart"/>
       <img src="/assets/profile.svg" alt="profile"/>
       <span id="cart-badge" class="position-absolute start-50 rubik-14 fw-500 translate-middle badge rounded-pill text-danger" style="display:none;">
         0
@@ -30,6 +28,13 @@ export const Menu = (): HTMLElement => {
   window.addEventListener('storage', (event): void => {
     if (event.key === 'cart-items') {
       updateCartUI(menu);
+    }
+  });
+
+  menu.addEventListener('click', (): void => {
+    const cartIcon = menu.querySelector('#cartIcon');
+    if (cartIcon) {
+      window.location.hash = '/cart';
     }
   });
 

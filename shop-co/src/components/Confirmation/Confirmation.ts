@@ -34,7 +34,7 @@ export const Confirmation = (): HTMLElement => {
     } else {
       clearInterval(interval);
       countDownEl.textContent = 'now.';
-      window.location.href = '/';
+      window.location.hash = '/';
     }
   }, 1000);
 

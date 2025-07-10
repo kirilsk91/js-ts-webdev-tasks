@@ -62,7 +62,7 @@ export const Gallery = (
 
     if (galleryItem && galleryItem.dataset.productId) {
       const pId = galleryItem.dataset.productId;
-      window.location.href = `/product/${pId}`;
+      window.location.hash = `/product/${pId}`;
     }
   });
 

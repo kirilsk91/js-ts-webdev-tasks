@@ -19,7 +19,7 @@ export const Button = (
 
   button.addEventListener('click', (): void => {
     if (navigationUrl) {
-      window.location.href = navigationUrl;
+      window.location.hash = navigationUrl;
     } else if (scrollAction) {
       const destination = document.getElementById('categories');
       if (destination) {

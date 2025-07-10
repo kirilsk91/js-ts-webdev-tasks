@@ -26,7 +26,7 @@ export const CategoryList = (items: Category[]): DocumentFragment => {
 
     if (catItem?.dataset.slug) {
       const slug = catItem.dataset.slug;
-      window.location.href = `/category/${slug}`;
+      window.location.hash = `/category/${slug}`;
     }
   });
 
