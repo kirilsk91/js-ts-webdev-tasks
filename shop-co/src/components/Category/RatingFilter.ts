@@ -30,7 +30,7 @@ export const RatingFilter = (): HTMLElement => {
     }
 
     const starWrapper = document.createElement('span');
-    starWrapper.className = 'rating-stars d-flex align-items-center"';
+    starWrapper.className = 'rating-stars d-flex align-items-center';
     starWrapper.style.marginLeft = '0.5rem';
 
     for (let i = 0; i < rating; i++) {

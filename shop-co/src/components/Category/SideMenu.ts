@@ -14,7 +14,7 @@ export const SideMenu = async (
   slug: string
 ): Promise<HTMLElement> => {
   const menu = document.createElement('div');
-  menu.className = 'side-menu col-3 d-flex flex-column w-auto h-100';
+  menu.className = 'side-menu col-3 d-none d-sm-flex flex-column w-auto h-100';
 
   menu.innerHTML =
     /*html*/

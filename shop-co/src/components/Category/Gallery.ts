@@ -6,11 +6,34 @@ export const Gallery = (
   slug: string
 ): HTMLElement => {
   const galleryWrapper = document.createElement('div');
-  galleryWrapper.className = 'gallery-wrapper col ms-5';
+  galleryWrapper.className = 'gallery-wrapper col ms-sm-5';
 
   const galleryTitle = document.createElement('div');
-  galleryTitle.className = 'gallery-title rubik-32 mb-4';
-  galleryTitle.innerText = slug;
+  galleryTitle.className =
+    'd-flex justify-content-between align-items-center gallery-title rubik-32 mb-4';
+
+  const titleText = document.createElement('span');
+  titleText.className = 'gallery-title-text';
+  titleText.innerText = slug;
+
+  const filterIconWrap = document.createElement('div');
+  filterIconWrap.className =
+    'd-flex align-items-center filter-icon-wrap d-sm-none';
+  filterIconWrap.innerHTML =
+    /*html*/
+    `
+  <img src='/assets/filter.svg' alt='filter icon'/>
+  `;
+
+  galleryTitle.append(titleText, filterIconWrap);
+
+  const filterIcon = filterIconWrap.querySelector('img');
+  filterIcon?.addEventListener('click', (): void => {
+    const sideMenu = document.querySelector('.side-menu') as HTMLElement;
+    if (sideMenu) {
+      sideMenu.classList.toggle('d-none');
+    }
+  });
 
   if (products.length === 0) {
     const noItems = document.createElement('div');
